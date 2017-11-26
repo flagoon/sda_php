@@ -84,23 +84,31 @@ $('document').ready(function () {
   }
 
   $('input').on('keyup', function (e) {
-
+    $('body').css('background-color', 'red');
     var valCity = document.getElementById(e.target.id).value;
     var suggestDiv = e.target.id;
-
-    $('#suggest-' + suggestDiv).show().css('heigth', '100px');
+    $('#suggest-' + suggestDiv).show();
 
     // lets try to use ajax instead
 
     $.ajax({
-      url: 'find_city.php?city=' + valCity + '&cont=' + suggestDiv,
-      dataType: 'html',
-      type: 'get',
-      success: (data) => {
+      url: 'find_city.php', //?city=' + valCity + '&cont=' + suggestDiv,
+      data: {
+        city: valCity,
+        cont: suggestDiv
+      },
+      type: "GET",
+      done: function (data) {
+        console.log('success')
         $('#suggest-' + suggestDiv).html = data;
       },
-      beforeSend: (data) => {
+      fail: function (data) {
+        console.log('success')
         $('#suggest-' + suggestDiv).html = 'Loading...';
+      },
+      always: function (data) {
+        console.log('success')
+        console.log('fail')
       }
     });
 
