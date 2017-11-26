@@ -1,4 +1,5 @@
 <?php
+
 @require 'passwords.php';
 
 // Create connection
