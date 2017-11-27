@@ -46,3 +46,9 @@ table {
 
 body {
   background-color: #272E10; }
+
+.hello {
+  color: white; }
+
+input {
+  margin: 0.5rem 0; }
