@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Input from './components/Input';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
-      
+      <Input name="Paweł"/>
     );
   }
 }
