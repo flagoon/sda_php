@@ -1,11 +1,17 @@
 import React from 'react';
 
 class PictureButton extends React.Component {
+
+  returnDataToWC (e) {
+    let random = Math.floor(Math.random() * 6);
+    this.props.getData(random);
+  }
+
   render() {
     return (
-      <div className="random-bg" ref="random-button">
-        Losuj
-      </div>
+      <button type="button" className="random-bg" onClick={this.returnDataToWC.bind(this)}>
+        Random
+      </button>
     );
   }
 }
