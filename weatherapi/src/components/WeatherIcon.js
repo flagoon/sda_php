@@ -6,7 +6,7 @@ class WeatherIcon extends React.Component {
   render () {
     return (
       <div className="big-icon-div">
-        <WI name={"owm-" + this.props.iconName} />
+        <WI name={'owm-' + this.props.iconName} />
       </div>
     );
   }
