@@ -3,11 +3,10 @@ import WI from 'react-weathericons';
 
 class WeatherIcon extends React.Component {
 
-  constructor () {
-    super();
-    this.state = {
-      mainIcon: ''
-    };
+  render () {
+    return (
+      <WI name={'owm-' + this.props.iconName} size = 'lg'/>
+    );
   }
 }
 
