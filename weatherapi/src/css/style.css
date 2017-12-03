@@ -1,8 +1,8 @@
 .weather-container {
   display: flex;
+  flex-wrap: wrap;
   width: 600px;
   height: 400px;
-  background-color: red;
   margin: 0 auto;
   padding: 1rem;
   box-shadow: 2px 2px 5px black;
@@ -46,4 +46,14 @@
   height: 5rem;
   background-color: green;
   color: white;
+}
+
+.big-icon-div {
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 15rem;
+  position: absolute;
+  top: 3rem;
 }
