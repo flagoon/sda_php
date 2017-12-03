@@ -40,3 +40,10 @@
   background-color: green;
   cursor: pointer;
 }
+
+.big-box {
+  width: 5rem;
+  height: 5rem;
+  background-color: green;
+  color: white;
+}
