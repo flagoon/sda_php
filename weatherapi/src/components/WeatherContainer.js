@@ -1,6 +1,7 @@
 import React from 'react';
 import FromCity from './FromCity';
 import PictureButton from './PictureButton';
+import WeatherIcon from './WeatherIcon';
 import $ from 'jquery';
 
 class WeatherContainer extends React.Component {
@@ -13,13 +14,21 @@ class WeatherContainer extends React.Component {
       coords: {
         lat: '',
         lon: ''
+      },
+      weatherData: {
+        cityName: '',
+        temp: '',
+        humidity: '',
+        pressure: '',
+        sunrise: '',
+        sunset: '',
+        id: ''
       }
     };
   }
 
   componentDidMount() {
     this.getGeoLocation();
-    this.getWeatherData();
   }
 
   getGeoLocation() {
@@ -34,7 +43,7 @@ class WeatherContainer extends React.Component {
               lon: pos.coords.longitude
             }
         });
-        console.log(this.state)
+        this.getWeatherData();
         //alert when error happens
       }, (error) => {
         alert('There was an error: ' + error.message);
@@ -44,17 +53,28 @@ class WeatherContainer extends React.Component {
   }
 
   getWeatherData() {
-    console.log(this.state.coords.lat)
     $.ajax({
-      url: 'https://fcc-weather-api.glitch.me/',
+      url: 'https://fcc-weather-api.glitch.me/api/current',
       data: {
         lat: this.state.coords.lat,
         lon: this.state.coords.lon
       },
-      dataType: 'JSON'
+      dataType: 'html',
+      type: 'get'
     }).done((data) => {
-      console.log(data);
-    }).fail((one, two, err) => {
+      const parsedData = JSON.parse(data);
+      this.setState({
+        weatherData: {
+          cityName: parsedData.name,
+          temp: parsedData.main.temp + '°C',
+          humidity: parsedData.main.humidity + '%',
+          pressure: parsedData.main.pressure,
+          sunrise: parsedData.sys.sunrise,
+          sunset: parsedData.sys.sunset,
+          id: parsedData.weather[0].id
+        }});
+      console.log(this.state);
+    }).fail((hxr, status, err) => {
       console.log(err);
     });
   }
@@ -69,7 +89,8 @@ class WeatherContainer extends React.Component {
     };
     return (
       <div id="weather-container" className="weather-container" style={style}>
-        <FromCity cityName="Szczecin" />
+        <FromCity cityName={this.state.weatherData.cityName} />
+        <WeatherIcon iconName = {this.state.weatherData.id}/>
         <PictureButton getData={this.getBackgroundData.bind(this)}/>
       </div>
     );
