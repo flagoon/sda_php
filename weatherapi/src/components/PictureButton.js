@@ -2,7 +2,7 @@ import React from 'react';
 
 class PictureButton extends React.Component {
 
-  returnDataToWC (e) {
+  returnDataToWC () {
     let random = Math.floor(Math.random() * 6);
     this.props.getData(random);
   }
