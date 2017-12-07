@@ -2,6 +2,7 @@ import React from 'react';
 import FromCity from './FromCity';
 import PictureButton from './PictureButton';
 import WeatherIcon from './WeatherIcon';
+import SmallWeather from './SmallWeather';
 import $ from 'jquery';
 
 class WeatherContainer extends React.Component {
@@ -23,7 +24,8 @@ class WeatherContainer extends React.Component {
         sunrise: '',
         sunset: '',
         id: ''
-      }
+      },
+      degrees: ''
     };
   }
 
@@ -66,17 +68,24 @@ class WeatherContainer extends React.Component {
       this.setState({
         weatherData: {
           cityName: parsedData.name,
-          temp: parsedData.main.temp + '°C',
-          humidity: parsedData.main.humidity + '%',
+          temp: parsedData.main.temp,
+          humidity: parsedData.main.humidity,
           pressure: parsedData.main.pressure,
-          sunrise: parsedData.sys.sunrise,
-          sunset: parsedData.sys.sunset,
-          id: parsedData.weather[0].id
-        }});
-      console.log(this.state);
+          sunrise: this.getHoursAndMinutes(parsedData.sys.sunrise),
+          sunset: this.getHoursAndMinutes(parsedData.sys.sunset),
+          id: 'owm-' + parsedData.weather[0].id
+        },
+        degrees: 'celsius'
+      });
     }).fail((hxr, status, err) => {
       console.log(err);
     });
+  }
+
+  getHoursAndMinutes(value) {
+    let time = new Date();
+    time.setTime(value * 1000);
+    return `${time.toLocaleString([], {hour: '2-digit', minute:'2-digit', hour12: false})}`;
   }
 
   getBackgroundData (data) {
@@ -90,7 +99,20 @@ class WeatherContainer extends React.Component {
     return (
       <div id="weather-container" className="weather-container" style={style}>
         <FromCity cityName={this.state.weatherData.cityName} />
-        <WeatherIcon iconName = {this.state.weatherData.id}/>
+        <div className="big-container">
+          <WeatherIcon iconName={this.state.weatherData.id} />
+          <WeatherIcon iconName={this.state.degrees} value={this.state.weatherData.temp}/>
+        </div>
+        <div className="small-parts">
+          {/*ciśnienie*/}
+          <SmallWeather icon="humidity" value={this.state.weatherData.humidity + '%'}/>
+          {/*wilgotność*/}
+          <SmallWeather icon="barometer" value={this.state.weatherData.pressure}/>
+          {/*wschód*/}
+          <SmallWeather icon="sunrise" value={this.state.weatherData.sunrise}/>
+          {/*zachód*/}
+          <SmallWeather icon="sunset" value={this.state.weatherData.sunset}/>
+        </div>
         <PictureButton getData={this.getBackgroundData.bind(this)}/>
       </div>
     );
