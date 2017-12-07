@@ -1,6 +1,6 @@
 import React from 'react';
 import FromCity from './FromCity';
-import PictureButton from './PictureButton';
+// import PictureButton from './PictureButton';
 import WeatherIcon from './WeatherIcon';
 import SmallWeather from './SmallWeather';
 import $ from 'jquery';
@@ -88,10 +88,6 @@ class WeatherContainer extends React.Component {
     return `${time.toLocaleString([], {hour: '2-digit', minute:'2-digit', hour12: false})}`;
   }
 
-  getBackgroundData (data) {
-    this.setState({randomBG: data});
-  }
-
   render() {
     let style = {
       backgroundImage: `url(./weatherPictures/${this.state.weather.bgPicture[this.state.randomBG]})`,
@@ -113,7 +109,7 @@ class WeatherContainer extends React.Component {
           {/*zachód*/}
           <SmallWeather icon="sunset" value={this.state.weatherData.sunset}/>
         </div>
-        <PictureButton getData={this.getBackgroundData.bind(this)}/>
+        {/*<PictureButton getData={this.getBackgroundData.bind(this)}/>*/}
       </div>
     );
   }
