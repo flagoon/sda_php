@@ -1,10 +1,13 @@
+body {
+  box-sizing: content-box;
+}
+
 .weather-container {
   display: flex;
   flex-wrap: wrap;
   width: 600px;
-  height: 400px;
+  height: 460px;
   margin: 0 auto;
-  padding: 1rem;
   box-shadow: 2px 2px 5px black;
   border-radius: 0.2rem;
   background-repeat: no-repeat;
@@ -14,7 +17,7 @@
 }
 
 .weather-box {
-  margin: 0;
+  margin: 1rem;
   background-color: rgba(255,255,255,0.5);
   box-shadow: 1px 1px 3px black;
   padding: 0.5rem;
@@ -41,19 +44,39 @@
   cursor: pointer;
 }
 
-.big-box {
-  width: 5rem;
-  height: 5rem;
-  background-color: green;
-  color: white;
+.big-container {
+  display: flex;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  color: rgb(0,0,255);
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  min-width: 600px;
+  font-size: 11rem;
+  position: absolute;
+  top: 4rem;
 }
 
-.big-icon-div {
-  color: rgba(255,255,255,0.7);
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  font-size: 15rem;
-  position: absolute;
-  top: 3rem;
+.big-container div {
+  display: inline-block;
 }
+
+.small-parts {
+  position: absolute;
+  width: 100%;
+  top: 18rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.small-parts div {
+  font-size: 2rem;
+  font-weight: bold;
+  width: 40%;
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 0.3rem;
+  box-shadow: 1px 1px 3px black;
+}
+
