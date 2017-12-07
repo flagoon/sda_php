@@ -5,7 +5,9 @@ class SmallWeather extends React.Component {
   render () {
     return (
       <div>
-        <WI name={this.props.icon}/>
+        <div className="icon-cont">
+          <WI name={this.props.icon}/>
+        </div>
         <span>{this.props.value}</span>
       </div>
     );
