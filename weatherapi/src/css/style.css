@@ -72,6 +72,7 @@ body {
 
 .small-parts > div {
   font-size: 2rem;
+  color: #34434f;
   font-weight: bold;
   width: 42%;
   margin: 0.5rem;
@@ -83,6 +84,7 @@ body {
 
 .small-parts div .icon-cont {
   width: 3rem;
+  color: #34434f;
   text-align: center;
   display: inline-block;
   margin-right: 1rem;
