@@ -59,8 +59,9 @@ class WeatherContainer extends React.Component {
     });
   }
 
-  getWeatherData(x) {
-    fetch(`https://fcc-weather-api.glitch.me/api/current?lat=${x.coords.lat}&lon=${x.coords.lon}`)
+  getWeatherData(geoLoc) {
+    console.log(geoLoc)
+    fetch(`https://fcc-weather-api.glitch.me/api/current?lat=${geoLoc.coords.lat}&lon=${geoLoc.coords.lon}`)
       .then(data => data.json())
       .then(data => {
         this.setState({
