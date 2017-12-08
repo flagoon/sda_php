@@ -61,7 +61,6 @@ class WeatherContainer extends React.Component {
   }
 
   getWeatherData(geoLoc) {
-    console.log(geoLoc)
     fetch(`https://fcc-weather-api.glitch.me/api/current?lat=${geoLoc.coords.lat}&lon=${geoLoc.coords.lon}`)
       .then(data => data.json())
       .then(data => {
@@ -79,7 +78,7 @@ class WeatherContainer extends React.Component {
         });
       });
   }
-  
+
   render() {
     let style = {
       backgroundImage: `url(./weatherPictures/${this.state.weather.bgPicture[5]})`,
@@ -95,7 +94,7 @@ class WeatherContainer extends React.Component {
           { /*ciśnienie*/ } 
           <SmallWeather icon = "humidity" value = {this.state.weatherData.humidity + '%'}/> 
           {/* wilgotność */} 
-          <SmallWeather icon = "barometer" value = {this.state.weatherData.pressure}/> 
+          <SmallWeather icon = "barometer" value = {this.state.weatherData.pressure + 'Hpa'}/> 
           { /* wschód */ } 
           <SmallWeather icon = "sunrise" value = {this.state.weatherData.sunrise}/> 
           { /* zachód */ } 
