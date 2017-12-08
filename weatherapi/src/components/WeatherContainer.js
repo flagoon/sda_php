@@ -48,7 +48,15 @@ class WeatherContainer extends React.Component {
         this.getWeatherData();
         //alert when error happens
       }, (error) => {
-        alert('There was an error: ' + error.message);
+        //
+        alert('Twoja przeglądarka nie obsługuje geolokacji. Ustawiono domyślną wartość.');
+        this.setState({coords:
+          {
+            lat: 52.22,
+            lon: 21.01
+          }
+        });
+        this.getWeatherData();
       });
     }
     
