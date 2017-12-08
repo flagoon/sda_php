@@ -2,6 +2,7 @@ import React from 'react';
 import FromCity from './FromCity';
 import WeatherIcon from './WeatherIcon';
 import SmallWeather from './SmallWeather';
+import { getHoursAndMinutes } from './Helpers';
 
 class WeatherContainer extends React.Component {
   constructor() {
@@ -70,25 +71,18 @@ class WeatherContainer extends React.Component {
             temp: data.main.temp,
             humidity: data.main.humidity,
             pressure: data.main.pressure,
-            sunrise: this.getHoursAndMinutes(data.sys.sunrise),
-            sunset: this.getHoursAndMinutes(data.sys.sunset),
+            sunrise: getHoursAndMinutes(data.sys.sunrise),
+            sunset: getHoursAndMinutes(data.sys.sunset),
             id: 'owm-' + data.weather[0].id
           },
           degrees: 'celsius'
         });
       });
-    
   }
-
-  getHoursAndMinutes(value) {
-    let time = new Date();
-    time.setTime(value * 1000);
-    return `${time.toLocaleString([], {hour: '2-digit', minute:'2-digit', hour12: false})}`;
-  }
-
+  
   render() {
     let style = {
-      backgroundImage: `url(./weatherPictures/${this.state.weather.bgPicture[this.state.randomBG]})`,
+      backgroundImage: `url(./weatherPictures/${this.state.weather.bgPicture[5]})`,
     };
     return ( 
       <div id = "weather-container" className = "weather-container" style = {style} >
