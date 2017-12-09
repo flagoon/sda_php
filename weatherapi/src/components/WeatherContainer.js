@@ -2,7 +2,7 @@ import React from 'react';
 import FromCity from './FromCity';
 import WeatherIcon from './WeatherIcon';
 import SmallWeather from './SmallWeather';
-import { getHoursAndMinutes } from './Helpers';
+import { getHoursAndMinutes, changeTemperatureScale } from './Helpers';
 
 class WeatherContainer extends React.Component {
   constructor() {
@@ -88,7 +88,8 @@ class WeatherContainer extends React.Component {
         <FromCity cityName = {this.state.weatherData.cityName}/> 
         <div className = "big-container" >
           <WeatherIcon iconName = {this.state.weatherData.id}/> 
-          <WeatherIcon iconName = {this.state.degrees} value = {this.state.weatherData.temp}/> 
+          {/* <WeatherIcon iconName = {this.state.degrees} value = {this.state.weatherData.temp}/>  */}
+          {changeTemperatureScale(10, 'fahrenheit')}
         </div> 
         <div className = "small-parts" > 
           { /*ciśnienie*/ } 
