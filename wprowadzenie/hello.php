@@ -1,7 +1,5 @@
 <?php 
 # to jest koment
-echo "Hello World\n";
+echo 'Hello World\';
 
-?>
 
-pzoa php
