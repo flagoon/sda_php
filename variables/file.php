@@ -1,6 +1,7 @@
 <?php
 $a = 3;
-#include 'another.php';
-require 'another.php';
+include_once 'another.php';
+require_once 'another.php';
+#require 'another.php';
 
 echo $a, PHP_EOL;

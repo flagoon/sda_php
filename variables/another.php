@@ -1,2 +1,4 @@
 <?php
-function test() {}; 
+
+echo 4;
+// function test() {}; 
