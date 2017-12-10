@@ -1,11 +1,17 @@
 <?php
-# this is the name of user
+/**
+ * Name of the user
+ */
 $name = 'Bobik';
 
-# this is the number of cleaned rooms
+/**
+ * this is the number of cleaned rooms
+ */
 $roomsCounter = 13;
 
-# the fuck I know
+/**
+ * the fuck I know
+ */
 $currentBandName = $name;
 
 echo $name . "\n";
