@@ -24,7 +24,7 @@ class WeatherIcon extends React.Component {
   render () {
 
     let degrees = null;
-
+    // nie działa dla 0 stopni!
     if (this.props.value) {
       degrees = <div>{this.props.value}</div>;
     }
