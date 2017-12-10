@@ -3,7 +3,7 @@ $var = 5;
 $cast = (bool)$var;
 var_dump($var, $cast);
 
-$var = 5;
+$var = 0;
 $cast = (bool)$var;
 var_dump($var, $cast);
 
