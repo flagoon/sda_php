@@ -1,16 +1,22 @@
 <?php
 /**
- * Name of the user
+ * Name of the user.
+ * 
+ * @var string
  */
 $name = 'Bobik';
 
 /**
- * this is the number of cleaned rooms
+ * This is the number of cleaned rooms.
+ * 
+ * @var integer
  */
 $roomsCounter = 13;
 
 /**
- * the fuck I know
+ * Name of the currenlty used band.
+ * 
+ * @var string
  */
 $currentBandName = $name;
 
