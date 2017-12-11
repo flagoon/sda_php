@@ -24,6 +24,13 @@ removeLastLetter($stringToTest);
 appendLetters($stringToTest, 's');
 insertLetters($stringToTest, 'my');
 
+//removeFirstLetter($stringToTest);
+//reverseText($stringToTest);
+//reverseText($stringToTest);
+//textUpperCase($stringToTest);
+//textLowerCase($stringToTest);
+//dotsInjection($stringToTest);
+
 
 /**
  * Dodanie do tekstu na końcu ciągu znaków.
@@ -70,3 +77,4 @@ function insertLetters(string $text, string $letters) {
     $newText = $letters . ' ' . $text;
     echo "After ", __FUNCTION__, ": ", $newText, PHP_EOL;
 }
+
