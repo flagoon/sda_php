@@ -24,8 +24,7 @@ removeLastLetter($stringToTest);
 appendLetters($stringToTest, 's');
 insertLetters($stringToTest, 'my');
 removeFirstLetter($stringToTest);
-//reverseText($stringToTest);
-//reverseText($stringToTest);
+reverseText($stringToTest);
 //textUpperCase($stringToTest);
 //textLowerCase($stringToTest);
 //dotsInjection($stringToTest);
@@ -85,5 +84,12 @@ function insertLetters(string $text, string $letters) {
 function removeFirstLetter(string $text) {
     echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
     $text = substr($text, 1, strlen($text));
+    echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
+}
+
+
+function reverseText(string $text) {
+    echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
+    $text = strrev($text);
     echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
 }
