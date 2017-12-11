@@ -87,7 +87,11 @@ function removeFirstLetter(string $text) {
     echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
 }
 
-
+/**
+ * Function that reverse given string.
+ *
+ * @param string $text this is our given string.
+ */
 function reverseText(string $text) {
     echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
     $text = strrev($text);
