@@ -27,7 +27,7 @@ removeFirstLetter($stringToTest);
 reverseText($stringToTest);
 textUpperCase($stringToTest);
 textLowerCase(textUpperCase($stringToTest));
-//dotsInjection($stringToTest);
+dotsInjection($stringToTest);
 
 
 /**
@@ -120,4 +120,10 @@ function textLowerCase(string $text) {
     echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
     $text = strtolower($text);
     echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
+}
+
+function dotsInjection(string $text) {
+  echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
+  $text = join(str_split($text, 1), '.');
+  echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
 }
