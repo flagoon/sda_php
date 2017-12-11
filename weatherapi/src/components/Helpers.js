@@ -10,9 +10,9 @@ export const getHoursAndMinutes = (value) => {
 export const changeTemperatureScale = (degrees, scale) => {
   let weatherIconContainer = null;
   let temperature = degrees;
-  if (scale === 'celsius') {
+  if (!scale) {
     temperature = Number(degrees) * 1.8 + 32;
-    weatherIconContainer = <WeatherIcon iconName = 'fahrneheit' value = {temperature.toFixed(0)}/>;
+    weatherIconContainer = <WeatherIcon iconName = 'fahrenheit' value = {temperature.toFixed(0)}/>;
   } else {
     temperature = (Number(degrees) - 32) / 1.8;
     weatherIconContainer = <WeatherIcon iconName = 'celsius' value = {temperature.toFixed(0)}/>;
