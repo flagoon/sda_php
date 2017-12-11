@@ -23,8 +23,7 @@ $stringToTest = 'rabbit';
 removeLastLetter($stringToTest);
 appendLetters($stringToTest, 's');
 insertLetters($stringToTest, 'my');
-
-//removeFirstLetter($stringToTest);
+removeFirstLetter($stringToTest);
 //reverseText($stringToTest);
 //reverseText($stringToTest);
 //textUpperCase($stringToTest);
@@ -78,3 +77,8 @@ function insertLetters(string $text, string $letters) {
     echo "After ", __FUNCTION__, ": ", $newText, PHP_EOL;
 }
 
+function removeFirstLetter(string $text) {
+    echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
+    $text = substr($text, 1, strlen($text));
+    echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
+}
