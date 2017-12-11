@@ -122,6 +122,11 @@ function textLowerCase(string $text) {
     echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
 }
 
+/**
+ * this function insert dots between letters of given word
+ *
+ * @param string $text is a given word
+ */
 function dotsInjection(string $text) {
   echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
   $text = join(str_split($text, 1), '.');
