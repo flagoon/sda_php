@@ -77,6 +77,11 @@ function insertLetters(string $text, string $letters) {
     echo "After ", __FUNCTION__, ": ", $newText, PHP_EOL;
 }
 
+/**
+ * Remove fist letter from given string.
+ *
+ * @param string $text this is our given string
+ */
 function removeFirstLetter(string $text) {
     echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
     $text = substr($text, 1, strlen($text));
