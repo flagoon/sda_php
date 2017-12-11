@@ -26,7 +26,7 @@ insertLetters($stringToTest, 'my');
 removeFirstLetter($stringToTest);
 reverseText($stringToTest);
 textUpperCase($stringToTest);
-textLowerCase($stringToTest);
+textLowerCase(textUpperCase($stringToTest));
 //dotsInjection($stringToTest);
 
 
