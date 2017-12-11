@@ -14,6 +14,11 @@ declare(strict_types=1);
 /** this will clear the terminal */
 system(clear);
 
+
+/**
+ * this variable will hold text to use in functions
+ * @var  $stringToTest
+ */
 $stringToTest = 'rabbit';
 removeLastLetter($stringToTest);
 appendLetters($stringToTest, 's');
