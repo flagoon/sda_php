@@ -102,6 +102,7 @@ function textUpperCase(string $text) {
     echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
     $text = strtoupper($text);
     echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
+    return $text;
 }
 
 function textLowerCase(string $text) {
