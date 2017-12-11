@@ -26,7 +26,7 @@ insertLetters($stringToTest, 'my');
 removeFirstLetter($stringToTest);
 reverseText($stringToTest);
 textUpperCase($stringToTest);
-//textLowerCase($stringToTest);
+textLowerCase($stringToTest);
 //dotsInjection($stringToTest);
 
 
@@ -101,5 +101,11 @@ function reverseText(string $text) {
 function textUpperCase(string $text) {
     echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
     $text = strtoupper($text);
+    echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
+}
+
+function textLowerCase(string $text) {
+    echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
+    $text = strtolower($text);
     echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
 }
