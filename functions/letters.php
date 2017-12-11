@@ -98,6 +98,12 @@ function reverseText(string $text) {
     echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
 }
 
+/**
+ * this function is changing all small letter in given string to uppercase
+ * it's returning uppercase string to use it in next function
+ *
+ * @param string $text it's a given string
+ */
 function textUpperCase(string $text) {
     echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
     $text = strtoupper($text);
@@ -105,6 +111,11 @@ function textUpperCase(string $text) {
     return $text;
 }
 
+/**
+ * this function is changing all big letter in given string to lowercase
+ *
+ * @param string $text it's a given string
+ */
 function textLowerCase(string $text) {
     echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
     $text = strtolower($text);
