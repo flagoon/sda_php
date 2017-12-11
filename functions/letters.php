@@ -12,7 +12,7 @@
 declare(strict_types=1);
 
 /** this will clear the terminal */
-system(clear);
+system('clear');
 
 
 /**
