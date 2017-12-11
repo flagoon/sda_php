@@ -88,8 +88,8 @@ class WeatherContainer extends React.Component {
         <FromCity cityName = {this.state.weatherData.cityName}/> 
         <div className = "big-container" >
           <WeatherIcon iconName = {this.state.weatherData.id}/> 
-          <WeatherIcon iconName = {this.state.degrees} value = {this.state.weatherData.temp}/> 
-          {/* {changeTemperatureScale(10, 'fahrenheit')} */}
+          {/* <WeatherIcon iconName = {this.state.degrees} value = {this.state.weatherData.temp}/>  */}
+          {changeTemperatureScale(2, false)}
         </div> 
         <div className = "small-parts" > 
           { /*ciśnienie*/ } 
