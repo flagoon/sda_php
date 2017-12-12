@@ -17,11 +17,21 @@ system('clear');
 
 /**
  * this variable will hold text to use in functions
- * @var  $stringToTest
+ * @var $stringToTest
  */
-$stringToTest = 12;
+$stringToTest = false;
 
-if (strlen($stringToTest) > 0) {
+/**
+ * it's an array of variable types, to check what article should echo return
+ * @var $types
+ */
+$types = ['object', 'array', 'integer'];
+
+in_array(gettype($stringToTest), $types) ? $a = "an" : $a = "a";
+
+if (gettype($stringToTest) != 'string') {
+  echo "This should be a string, not $a " . gettype($stringToTest), PHP_EOL ;
+} else if (strlen($stringToTest) > 0) {
   removeLastLetter($stringToTest);
   appendLetters($stringToTest, 's');
   insertLetters($stringToTest, 'my');
