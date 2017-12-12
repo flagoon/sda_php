@@ -19,7 +19,7 @@ system('clear');
  * this variable will hold text to use in functions
  * @var $stringToTest string
  */
-$stringToTest = false;
+$stringToTest = "Żółć";
 
 /**
  * it's an array of variable types, to check what article should echo return
@@ -74,7 +74,7 @@ function appendLetters(string $text, string $letters): string
 function removeLastLetter(string $text): string
 {
     echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
-    $text = substr($text, 0, strlen($text) - 1);
+    $text = mb_substr($text, 0, mb_strlen($text) - 1);
     echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
 
     return $text;
@@ -100,7 +100,7 @@ function insertLetters(string $text, string $letters) {
  */
 function removeFirstLetter(string $text) {
     echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
-    $text = substr($text, 1, strlen($text));
+    $text = mb_substr($text, 1, strlen($text));
     echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
 }
 
