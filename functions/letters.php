@@ -19,15 +19,20 @@ system('clear');
  * this variable will hold text to use in functions
  * @var  $stringToTest
  */
-$stringToTest = 'rabbit';
-removeLastLetter($stringToTest);
-appendLetters($stringToTest, 's');
-insertLetters($stringToTest, 'my');
-removeFirstLetter($stringToTest);
-reverseText($stringToTest);
-textUpperCase($stringToTest);
-textLowerCase(textUpperCase($stringToTest));
-dotsInjection($stringToTest);
+$stringToTest = 12;
+
+if (strlen($stringToTest) > 0) {
+  removeLastLetter($stringToTest);
+  appendLetters($stringToTest, 's');
+  insertLetters($stringToTest, 'my');
+  removeFirstLetter($stringToTest);
+  reverseText($stringToTest);
+  textUpperCase($stringToTest);
+  textLowerCase(textUpperCase($stringToTest));
+  dotsInjection($stringToTest);
+} else {
+  echo "String should have at least one character", PHP_EOL;
+}
 
 
 /**
