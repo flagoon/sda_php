@@ -28,7 +28,7 @@ $stringToTest = false;
 $types = ['object', 'array', 'integer'];
 
 
-
+// this condition is checking what article should be used.
 in_array(gettype($stringToTest), $types) ? $a = "an" : $a = "a";
 
 if (gettype($stringToTest) != 'string') {
