@@ -17,15 +17,17 @@ system('clear');
 
 /**
  * this variable will hold text to use in functions
- * @var $stringToTest
+ * @var $stringToTest string
  */
 $stringToTest = false;
 
 /**
  * it's an array of variable types, to check what article should echo return
- * @var $types
+ * @var $types array
  */
 $types = ['object', 'array', 'integer'];
+
+
 
 in_array(gettype($stringToTest), $types) ? $a = "an" : $a = "a";
 
