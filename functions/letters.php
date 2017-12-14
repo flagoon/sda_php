@@ -40,7 +40,7 @@ if (gettype($stringToTest) != 'string') {
   removeFirstLetter($stringToTest);
   reverseText($stringToTest);
   textUpperCase($stringToTest);
-  textLowerCase(textUpperCase($stringToTest));
+  textLowerCase($stringToTest);
   dotsInjection($stringToTest);
 } else {
   echo "String should have at least one character", PHP_EOL;
