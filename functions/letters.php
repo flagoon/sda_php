@@ -19,7 +19,7 @@ system('clear');
  * this variable will hold text to use in functions
  * @var $stringToTest string
  */
-$stringToTest = "Żółć";
+$stringToTest = "zażółć gęĘŚŁĄ JAŹŃ";
 
 /**
  * it's an array of variable types, to check what article should echo return
@@ -154,8 +154,15 @@ function dotsInjection(string $text) {
 
   // a loop to split string and then join it with dots
   for ($i = 0; $i < mb_strlen($text); $i++) {
-    $arr[] = mb_substr($text, $i, 1);
+
+    $letter = mb_substr($text, $i, 1);
+    // without this condition, I would have ugly dots at the beginning for words in sentance.
+    if ($letter == " ") {
+      $arr[] = $letter;
+    } else {
+      $arr[] = $letter . ".";
+    }
   }
-  $text = join($arr, ".");
+  $text = join($arr, "");
   echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
 }
