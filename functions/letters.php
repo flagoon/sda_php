@@ -57,9 +57,9 @@ if (gettype($stringToTest) != 'string') {
  */
 function appendLetters(string $text, string $letters): string
 {
-    echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "Before \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
     $text .= $letters;
-    echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "After \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
 
     return $text;
 }
@@ -73,9 +73,9 @@ function appendLetters(string $text, string $letters): string
  */
 function removeLastLetter(string $text): string
 {
-    echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "Before \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
     $text = mb_substr($text, 0, mb_strlen($text) - 1);
-    echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "After \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
 
     return $text;
 }
@@ -88,9 +88,9 @@ function removeLastLetter(string $text): string
  * @param string $letters this is letters that will be put before our word
  */
 function insertLetters(string $text, string $letters) {
-    echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "Before \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
     $newText = $letters . ' ' . $text;
-    echo "After ", __FUNCTION__, ": ", $newText, PHP_EOL;
+    echo "After \033[1;32m", __FUNCTION__, "\033[0m: ", $newText, PHP_EOL;
 }
 
 /**
@@ -99,9 +99,9 @@ function insertLetters(string $text, string $letters) {
  * @param string $text this is our given string
  */
 function removeFirstLetter(string $text) {
-    echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "Before \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
     $text = mb_substr($text, 1, strlen($text));
-    echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "After \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
 }
 
 /**
@@ -110,14 +110,14 @@ function removeFirstLetter(string $text) {
  * @param string $text this is our given string.
  */
 function reverseText(string $text) {
-    echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "Before \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
 
     // there is no mb_strrev function, so please accept my workarround :)
     for ($i = mb_strlen($text); $i >= 0; $i--) {
       $arr[] = mb_substr($text, $i, 1);
     }
     $text = join($arr, "");
-    echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "After \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
 }
 
 /**
@@ -127,9 +127,9 @@ function reverseText(string $text) {
  * @param string $text it's a given string
  */
 function textUpperCase(string $text) {
-    echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "Before \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
     $text = strtoupper($text);
-    echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "After \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
     return $text;
 }
 
@@ -139,9 +139,9 @@ function textUpperCase(string $text) {
  * @param string $text it's a given string
  */
 function textLowerCase(string $text) {
-    echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "Before \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
     $text = strtolower($text);
-    echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
+    echo "After \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
 }
 
 /**
@@ -150,7 +150,7 @@ function textLowerCase(string $text) {
  * @param string $text is a given word
  */
 function dotsInjection(string $text) {
-  echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
+  echo "Before \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
 
   // a loop to split string and then join it with dots
   for ($i = 0; $i < mb_strlen($text); $i++) {
@@ -169,5 +169,5 @@ function dotsInjection(string $text) {
     }
   }
   $text = join($arr, "");
-  echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
+  echo "After \033[1;32m", __FUNCTION__, "\033[0m: ", $text, PHP_EOL;
 }
