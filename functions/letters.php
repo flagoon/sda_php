@@ -16,10 +16,10 @@ system('clear');
 
 
 /**
- * this variable will hold text to use in functions
+ * now you can add your own word. Trim to remove enter key.
  * @var $stringToTest string
  */
-$stringToTest = "zażółć gęĘŚŁĄ JAŹŃ";
+$stringToTest = trim(readline("Wpisz dowolne słowo: "));
 
 /**
  * it's an array of variable types, to check what article should echo return
