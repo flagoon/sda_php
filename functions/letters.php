@@ -111,7 +111,12 @@ function removeFirstLetter(string $text) {
  */
 function reverseText(string $text) {
     echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
-    $text = strrev($text);
+
+    // there is no mb_strrev function, so please accept my workarround :)
+    for ($i = mb_strlen($text); $i >= 0; $i--) {
+      $arr[] = mb_substr($text, $i, 1);
+    }
+    $text = join($arr, "");
     echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
 }
 
