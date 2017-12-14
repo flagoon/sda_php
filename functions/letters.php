@@ -151,7 +151,7 @@ function textLowerCase(string $text) {
  */
 function dotsInjection(string $text) {
   echo "Before \033[1;32m", __FUNCTION__, "\033[0m: \e[0;31m", $text, "\033[0m",  PHP_EOL;
-
+  $uglyChars = [" ", ":", ".", ",", "?", "!", "^", "(", ")", "'", "\"", ";",];
   // a loop to split string and then join it with dots
   for ($i = 0; $i < mb_strlen($text); $i++) {
 
@@ -162,7 +162,7 @@ function dotsInjection(string $text) {
      */
     $letter = mb_substr($text, $i, 1);
     // without this condition, I would have ugly dots at the beginning for words in sentence.
-    if ($letter == " ") {
+    if (in_array($letter, $uglyChars)) {
       $arr[] = $letter;
     } else {
       $arr[] = $letter . ".";
