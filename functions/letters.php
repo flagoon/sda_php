@@ -155,8 +155,13 @@ function dotsInjection(string $text) {
   // a loop to split string and then join it with dots
   for ($i = 0; $i < mb_strlen($text); $i++) {
 
+    /**
+     * this variable is used for checking for spacebar character.
+     *
+     * @var $letter string - a single letter subtracted from $text
+     */
     $letter = mb_substr($text, $i, 1);
-    // without this condition, I would have ugly dots at the beginning for words in sentance.
+    // without this condition, I would have ugly dots at the beginning for words in sentence.
     if ($letter == " ") {
       $arr[] = $letter;
     } else {
