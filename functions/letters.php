@@ -151,6 +151,11 @@ function textLowerCase(string $text) {
  */
 function dotsInjection(string $text) {
   echo "Before ", __FUNCTION__, ": ", $text, PHP_EOL;
-  $text = join(str_split($text, 1), '.');
+
+  // a loop to split string and then join it with dots
+  for ($i = 0; $i < mb_strlen($text); $i++) {
+    $arr[] = mb_substr($text, $i, 1);
+  }
+  $text = join($arr, ".");
   echo "After ", __FUNCTION__, ": ", $text, PHP_EOL;
 }
