@@ -8,10 +8,6 @@ $hundreds = (int)($price / 100);
 $tens = (int)(($price - $hundreds * 100) / 10);
 $single = (int)($price - $hundreds * 100 - $tens * 10);
 
-echo "$hundreds", PHP_EOL;
-echo "$tens", PHP_EOL;
-echo "$single", PHP_EOL;
-
 $hundredsArr = [
     "1" => "sto ",
     "2" => "dwieście ",
@@ -46,6 +42,7 @@ $tensArr = [
     "7" => "siedemdziesiąt ",
     "8" => "osiemdziesiąt ",
     "9" => "dziewiędziesiąt ",
+    "0" => "",
 ];
 
 $singleArr = [
@@ -58,11 +55,35 @@ $singleArr = [
     "7" => "siedem ",
     "8" => "osiem ",
     "9" => "dziewięć ",
-    "0" => "zero ",
+    "0" => "",
 ];
 
+if (10 > $price) {
+    $singleArr["0"] = "zero";
+    echo $singleArr[$single], zlote($single), PHP_EOL;
+} elseif (20 > $price && 10 <= $price) {
+    echo $tensArr[1][$single], "złotych", PHP_EOL;
+} elseif (100 > $price && 20 <= $price)  {
+    echo "{$tensArr[$tens]}{$singleArr[$single]}", zlote($single),  PHP_EOL;
+} elseif (1000 > $price && 100 <= $price) {
+    echo "{$hundredsArr[$hundreds]}{$tensArr[$tens]}{$singleArr[$single]}", zlote($single), PHP_EOL;
+}
 
-
+function zlote($lastCypher) 
+{
+    if ($lastCypher === 0 || ($lastCypher > 4 && $lastCypher <= 9)) {
+        return "złotych";
+    } elseif ($lastCypher > 1 && $lastCypher < 5) {
+        return "złote";
+    } else {
+        if ($price > 10) {
+            return "złoty";
+        } else {
+            return "złotych";
+        }
+        
+    }
+}
 
 // jede   naście
 // dwa   naście
