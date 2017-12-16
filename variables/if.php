@@ -1,5 +1,7 @@
 <?php
 
-if (5 > 2) {
+$a = 5;
+
+if ($a > 2) {
     echo 'piec jest wieksze od dwoch';
 }
