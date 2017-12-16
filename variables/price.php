@@ -2,7 +2,7 @@
 
 system("clear");
 
-$price = readline("Podaj cenę od 0 - 999: ");
+$price = (int)readline("Podaj cenę od 0 - 999: ");
 
 $hundreds = (int)($price / 100);
 $tens = (int)(($price - $hundreds * 100) / 10);
@@ -58,39 +58,50 @@ $singleArr = [
     "0" => "",
 ];
 
-if (10 > $price) {
+if (strlen($price) === 1) {
     $singleArr["0"] = "zero";
-    echo $singleArr[$single], zlote($single), PHP_EOL;
-} elseif (20 > $price && 10 <= $price) {
-    echo $tensArr[1][$single], "złotych", PHP_EOL;
-} elseif (100 > $price && 20 <= $price)  {
-    echo "{$tensArr[$tens]}{$singleArr[$single]}", zlote($single),  PHP_EOL;
-} elseif (1000 > $price && 100 <= $price) {
-    echo "{$hundredsArr[$hundreds]}{$tensArr[$tens]}{$singleArr[$single]}", zlote($single), PHP_EOL;
 }
 
-function zlote($lastCypher) 
-{
-    if ($lastCypher === 0 || ($lastCypher > 4 && $lastCypher <= 9)) {
-        return "złotych";
-    } elseif ($lastCypher > 1 && $lastCypher < 5) {
-        return "złote";
+function printHundreds($number, $arr) {
+    echo "{$arr[$number]}";
+}
+
+function printTens($tens, $singles, $arr) {
+    if (1 === $tens) {
+        echo "{$arr[1][$singles]}";
     } else {
-        if ($price > 10) {
-            return "złoty";
-        } else {
-            return "złotych";
-        }
-        
+        echo "{$arr[$tens]}";
     }
 }
 
-// jede   naście
-// dwa   naście
-// trzy   naście
-// czter   naście
-// piet   naście
-// szes   naście
-// siedem   naście
-// osiem   naście
-// dziewiet   naście
+function printSingles($number, $arr) {
+    echo "{$arr[$number]}";
+}
+
+printHundreds($hundreds, $hundredsArr);
+
+printtens($tens, $single, $tensArr);
+
+if (!($tens === 1)) {
+    printSingles($single, $singleArr);
+}
+
+if ($single === 0 || ($single > 4 && $single < 10)) {
+    echo "złotych";
+}
+
+if ($price === 1) {
+    echo "złoty";
+}
+
+if ($single === 1 && $price > 10) {
+    echo "złotych";
+}
+
+if ($single > 1 && $single < 5 && ($price < 10 || $price > 20)) {
+    echo "złote";
+}
+
+if ($single > 2 && $single < ) {
+
+}
