@@ -2,6 +2,10 @@
 declare(static_types = 1);
 system("clear");
 
+/**
+ * This variable will hold the value given by user.
+ * @var $price (int) price to be change to words
+ */
 $price = (int)readline("Podaj cenę od 0 - 999: ");
 
 $hundreds = (int)($price / 100);
