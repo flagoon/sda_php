@@ -8,6 +8,9 @@ for ($i = 0; $i < 2; ++$i) {
         $boxMax =2;
 
         while ($boxMax) {
+            if ($fruit === 'Orange') {
+                break;
+            }
             $box[] = $fruit;
             --$boxMax;
         }
