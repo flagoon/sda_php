@@ -14,4 +14,19 @@ function sum(int $a = 0, int $b = 0): int
     return $a + $b;
 }
 
-echo sum(4,4), PHP_EOL;
+function diff(int $a = 0, int $b = 0): int
+{
+    return $a - $b;
+}
+
+function multi(int $a = 0, int $b = 0): int
+{
+    return $a * $b;
+}
+
+function div(int $a = 0, int $b = 0): int
+{
+    return $a / $b;
+}
+
+echo sum(multi(div(8, 2), diff(10, 5)), diff(15, sum(3, 8))), PHP_EOL;
