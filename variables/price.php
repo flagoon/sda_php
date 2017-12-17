@@ -1,7 +1,10 @@
 <?php
 declare(strict_types = 1);
 
+// $correct integer for breaking out of loop.
 $correct = 0;
+
+// $pricePrompt string better communicate with user, that don't understand simple commands.
 $pricePrompt = "Podaj cenę od 0 - 999: ";
 
 do {
@@ -11,7 +14,6 @@ do {
     $pricePrompt = "Musiasz podać LICZBĘ z przedzialu 0 - 999: ";
 
     if (is_numeric($price) && $price >= 0 && $price < 1000) {
-        // $correct integer for breaking out of loop
         $correct = 1;
     }
 
