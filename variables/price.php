@@ -101,12 +101,12 @@ if (mb_strlen($price) === 1) {
     $singleArr["0"] = "zero";
 }
 
-function printHundreds($number, $arr)
+function printHundreds(int $number, array $arr): void
 {
     echo "{$arr[$number]}";
 }
 
-function printTens($tens, $singles, $arr)
+function printTens(int $tens, int $singles, array $arr): void
 {
     if (1 === $tens) {
         echo "{$arr[1][$singles]}złotych";
@@ -115,7 +115,7 @@ function printTens($tens, $singles, $arr)
     }
 }
 
-function printSingles($number, $arr)
+function printSingles(int $number, array $arr): void
 {
     echo "{$arr[$number]}";
 }
