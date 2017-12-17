@@ -62,11 +62,13 @@ if (strlen($price) === 1) {
     $singleArr["0"] = "zero";
 }
 
-function printHundreds($number, $arr) {
+function printHundreds($number, $arr)
+{
     echo "{$arr[$number]}";
 }
 
-function printTens($tens, $singles, $arr) {
+function printTens($tens, $singles, $arr)
+{
     if (1 === $tens) {
         echo "{$arr[1][$singles]}";
     } else {
@@ -74,7 +76,8 @@ function printTens($tens, $singles, $arr) {
     }
 }
 
-function printSingles($number, $arr) {
+function printSingles($number, $arr)
+{
     echo "{$arr[$number]}";
 }
 
@@ -100,8 +103,4 @@ if ($single === 1 && $price > 10) {
 
 if ($single > 1 && $single < 5 && ($price < 10 || $price > 20)) {
     echo "złote";
-}
-
-if ($single > 2 && $single < ) {
-
 }

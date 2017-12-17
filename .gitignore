@@ -1,5 +1,4 @@
-geodist/passwords.php
-geodist/.eslintrc.js
-geodist/node_modules/
 .idea/
-variables/.idea/.
+.idea/workspace.xml
+.pgp_cs.cache
+
