@@ -1,12 +1,22 @@
 <?php
 declare(static_types = 1);
-system("clear");
 
+$correct = 0;
+
+do {
+    system('clear');
+    $price = readline("Podaj cenę od 0 - 999: ");
+
+    if (is_numeric($price) && $price >= 0 && $price < 1000) {
+        $price = (int)$price;
+        $correct = 1;
+    }
+
+} while (!$correct);
 /**
  * This variable will hold the value given by user.
  * @var $price (int) price to be change to words
  */
-$price = (int)readline("Podaj cenę od 0 - 999: ");
 
 $hundreds = (int)($price / 100);
 $tens = (int)(($price - $hundreds * 100) / 10);
