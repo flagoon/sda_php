@@ -1,4 +1,9 @@
 <?php
+//error reporting
+error_reporting(E_ALL);
+ini_set('display_error', true);
+
+//script body
 const MAX_SLIDE_NUMBER = 99;
 define("MAX_SLIDE_NUMBER", 666);
 
