@@ -19,8 +19,19 @@ do {
 
 } while (!$correct);
 
+/**
+ * @var $hundreds integer number of hundreds.
+ */
 $hundreds = (int)($price / 100);
+
+/**
+ * @var $tens integer number of tens.
+ */
 $tens = (int)(($price - $hundreds * 100) / 10);
+
+/**
+ * @var $single integer number of singles.
+ */
 $single = (int)($price - $hundreds * 100 - $tens * 10);
 
 $hundredsArr = [
