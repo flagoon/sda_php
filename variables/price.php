@@ -2,11 +2,13 @@
 declare(strict_types = 1);
 
 $correct = 0;
+$pricePrompt = "Podaj cenę od 0 - 999: ";
 
 do {
     system('clear');
     // $price string holds the value of price
-    $price = readline("Podaj cenę od 0 - 999: ");
+    $price = readline($pricePrompt);
+    $pricePrompt = "Musiasz podać LICZBĘ z przedzialu 0 - 999: ";
 
     if (is_numeric($price) && $price >= 0 && $price < 1000) {
         // $correct integer for breaking out of loop
