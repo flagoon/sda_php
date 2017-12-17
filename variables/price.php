@@ -136,6 +136,8 @@ function printSingles(int $number, array $arr): void
     echo "{$arr[$number]}";
 }
 
+echo PHP_EOL . "************************************" . PHP_EOL;
+
 printHundreds($hundreds, $hundredsArr);
 
 printtens($tens, $single, $tensArr);
@@ -144,3 +146,5 @@ if ($tens !== 1) {
     printSingles($single, $singleArr);
     echo $currencyName[$single];
 }
+
+echo PHP_EOL . "************************************" . PHP_EOL;
