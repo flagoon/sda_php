@@ -53,12 +53,14 @@ $users = [
     //     $newUsers[] = $user;
     // }
 
-    $filtredArray = array_filter($users, function($user) {
-        if ($user["status"] !== "hidden"
-        && $user["status"] !== "disabled"
-        && $user["birthYear"] > 1987) {
-            return $user;
-        }
-    });
+$filtredArray = array_filter($users, function($user) {
+    if ($user["status"] !== "hidden"
+    && $user["status"] !== "disabled"
+    && $user["birthYear"] > 1987) {
+        return $user;
+    }
+});
 
-    var_export($filtredArray);
+
+
+var_export($filtredArray);
