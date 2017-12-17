@@ -62,3 +62,18 @@ $filtredArray = array_filter($users, function($user) {
 });
 
 // var_export($filtredArray);
+
+$isNotHidden = function(array $user): bool {
+    return $user["status"] !== "hidden";
+};
+
+$isNotDisabled = function(array $user): bool {
+    return $user["status"] !== "disabled";
+};
+
+$isLessThan30 = function(array $user): bool {
+    $age = 2017 - $user["birthYear"];
+    return $age < 30;
+};
+
+var_export(array_filter($users, $isLessThan30));
