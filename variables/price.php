@@ -1,5 +1,5 @@
 <?php
-declare(static_types = 1);
+declare(strict_types = 1);
 
 $correct = 0;
 
