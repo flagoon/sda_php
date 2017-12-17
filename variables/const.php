@@ -11,3 +11,7 @@ echo PHP_VERSION, PHP_EOL;
 echo PHP_OS, PHP_EOL;
 echo PHP_INT_MAX, PHP_EOL;
 echo DEFAULT_INCLUDE_PATH, PHP_EOL;
+
+define ("DATABASE_NAME", "zuzia123");
+//LUB TAK
+const DATABASE_NAME = "zuzia123";
