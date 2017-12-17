@@ -9,6 +9,7 @@ do {
     $price = readline("Podaj cenę od 0 - 999: ");
 
     if (is_numeric($price) && $price >= 0 && $price < 1000) {
+        // $correct integer for breaking out of loop
         $correct = 1;
     }
 
