@@ -37,30 +37,28 @@ $users = [
     ],
  ];
 
-    $newUsers = [];
+    // $newUsers = [];
 
-    foreach($users as $user) {
-        if ($user["status"] === "hidden") {
-            continue;
-        } 
-        if ($user["status"] === "disabled") {
-            continue;
-        }
-        if ($user["birthYear"] < 1987) {
-            continue;
-        }
-
-        $newUsers[] = $user;
-    }
-    //  $filtredArray = array_filter($users, function($strings) {
-    //     foreach($strings as $string) {
-    //         if (($strings["status"] === "disabled" 
-    //         || $strings["status"] === "disabled") 
-    //         && $string["birthYear"] < 1987) {
-    //             echo gettype($strings);
-    //             return $strings;
-    //         };
+    // foreach($users as $user) {
+    //     if ($user["status"] === "hidden") {
+    //         continue;
     //     } 
-    // });
+    //     if ($user["status"] === "disabled") {
+    //         continue;
+    //     }
+    //     if ($user["birthYear"] < 1987) {
+    //         continue;
+    //     }
 
-    var_export($newUsers);
+    //     $newUsers[] = $user;
+    // }
+
+    $filtredArray = array_filter($users, function($user) {
+        if ($user["status"] !== "hidden"
+        && $user["status"] !== "disabled"
+        && $user["birthYear"] > 1987) {
+            return $user;
+        }
+    });
+
+    var_export($filtredArray);
