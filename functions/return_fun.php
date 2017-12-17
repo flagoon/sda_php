@@ -43,7 +43,7 @@ function multi(int $a = 0, int $b = 0): int
  * 
  * @param int $a [opt] first number to division
  * @param int $b [opt] second number to division
- * @return int result of division
+ * @return float result of division
  */
 function div(int $a = 0, int $b = 0): float
 { 
