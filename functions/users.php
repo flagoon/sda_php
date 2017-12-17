@@ -39,10 +39,10 @@ $users = [
 
     $newUsers = [];
 
-    foreach($users as $user) {
+    foreach ($users as $user) {
         if ($user["status"] === "hidden") {
             continue;
-        } 
+        }
         if ($user["status"] === "disabled") {
             continue;
         }
@@ -53,7 +53,7 @@ $users = [
         $newUsers[] = $user;
     }
 
-$filtredArray = array_filter($users, function($user) {
+$filtredArray = array_filter($users, function ($user) {
     if ($user["status"] !== "hidden"
     && $user["status"] !== "disabled"
     && $user["birthYear"] > 1987) {
@@ -63,15 +63,15 @@ $filtredArray = array_filter($users, function($user) {
 
 // var_export($filtredArray);
 
-$isNotHidden = function(array $user): bool {
+$isNotHidden = function (array $user): bool {
     return $user["status"] !== "hidden";
 };
 
-$isNotDisabled = function(array $user): bool {
+$isNotDisabled = function (array $user): bool {
     return $user["status"] !== "disabled";
 };
 
-$isLessThan30 = function(array $user): bool {
+$isLessThan30 = function (array $user): bool {
     $age = 2017 - $user["birthYear"];
     return $age < 30;
 };
