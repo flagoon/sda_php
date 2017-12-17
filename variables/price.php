@@ -16,7 +16,6 @@ do {
     if (is_numeric($price) && $price >= 0 && $price < 1000) {
         $correct = 1;
     }
-
 } while (!$correct);
 
 /**
