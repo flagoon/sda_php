@@ -8,10 +8,10 @@ system('clear');
  * @param string $familyName nazwisko
  * @param int $year rok urodzenia
  */
-function printFamilyName(string $familyName, int $year): void 
+function printFamilyName(string $familyName, int $year = 2000): void 
 {
     echo "Name: {$familyName}. Born: {$year}", PHP_EOL;
 }
 
-printFamilyName("Kochanek", 1980);
+printFamilyName("Kochanek");
 printFamilyName("Kowalski", 2019);
