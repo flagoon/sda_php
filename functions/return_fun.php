@@ -14,19 +14,44 @@ function sum(int $a = 0, int $b = 0): int
     return $a + $b;
 }
 
+/**
+ * Simple function to return a difference of two numbers
+ * 
+ * @param int $a [opt] first number to differentiate
+ * @param int $b [opt] second number to differentiate
+ * @return int result of difference
+ */
 function diff(int $a = 0, int $b = 0): int
 {
     return $a - $b;
 }
 
+/**
+ * Simple function to return a multiply of two numbers
+ * 
+ * @param int $a [opt] first number to multiply
+ * @param int $b [opt] second number to multiply
+ * @return int result of multiply
+ */
 function multi(int $a = 0, int $b = 0): int
 {
     return $a * $b;
 }
 
-function div(int $a = 0, int $b = 0): int
-{
+/**
+ * Simple function to return a devision of two numbers
+ * 
+ * @param int $a [opt] first number to division
+ * @param int $b [opt] second number to division
+ * @return int result of division
+ */
+function div(int $a = 0, int $b = 0): float
+{ 
+    if ($b === 0) {
+        die("Can't divide by 0" . PHP_EOL);
+    }
+
     return $a / $b;
 }
 
-echo sum(multi(div(8, 2), diff(10, 5)), diff(15, sum(3, 8))), PHP_EOL;
+echo div(3, 0), PHP_EOL;
