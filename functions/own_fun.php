@@ -1,11 +1,11 @@
 <?php
-
+declare(strict_types = 1);
 system('clear');
 
-function printFamilyName($familyName) 
+function printFamilyName(string $familyName): void 
 {
     echo "Name: $familyName", PHP_EOL;
 }
 
-printFamilyName("Kochanek");
+printFamilyName(23423423);
 printFamilyName("Kowalski");
