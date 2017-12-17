@@ -1,5 +1,5 @@
 <?php
-
+declare(static_types = 1);
 system("clear");
 
 $price = (int)readline("Podaj cenę od 0 - 999: ");
