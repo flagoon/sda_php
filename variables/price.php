@@ -97,7 +97,7 @@ $currencyName = [
     "9" => "złotych",
 ];
 
-if (strlen($price) === 1) {
+if (mb_strlen($price) === 1) {
     $singleArr["0"] = "zero";
 }
 
