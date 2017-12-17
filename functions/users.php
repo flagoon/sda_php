@@ -61,4 +61,4 @@ $filtredArray = array_filter($users, function($user) {
     }
 });
 
-var_export($filtredArray);
+// var_export($filtredArray);
