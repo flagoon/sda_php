@@ -8,8 +8,8 @@ for ($i = 0; $i < 2; ++$i) {
         $boxMax =2;
 
         while ($boxMax) {
-            if ($fruit === 'Orange') {
-                continue 2; //continue pomija iteracje pętli dwa w zwyż
+            if ($boxMax === 1) {
+                break;
             }
             $box[] = $fruit;
             --$boxMax;
