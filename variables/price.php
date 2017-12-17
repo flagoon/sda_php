@@ -58,6 +58,19 @@ $singleArr = [
     "0" => "",
 ];
 
+$currencyName = [
+    "0" => "złotych",
+    "1" => "złotych",
+    "2" => "złote",
+    "3" => "złote",
+    "4" => "złote",
+    "5" => "złotych",
+    "6" => "złotych",
+    "7" => "złotych",
+    "8" => "złotych",
+    "9" => "złotych",
+];
+
 if (strlen($price) === 1) {
     $singleArr["0"] = "zero";
 }
@@ -70,7 +83,7 @@ function printHundreds($number, $arr)
 function printTens($tens, $singles, $arr)
 {
     if (1 === $tens) {
-        echo "{$arr[1][$singles]}";
+        echo "{$arr[1][$singles]}złotych";
     } else {
         echo "{$arr[$tens]}";
     }
@@ -87,4 +100,8 @@ printtens($tens, $single, $tensArr);
 
 if (!($tens === 1)) {
     printSingles($single, $singleArr);
+}
+
+if ($tens !== 1) {
+    echo $currencyName[$single];
 }
