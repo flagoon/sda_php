@@ -101,20 +101,36 @@ if (mb_strlen($price) === 1) {
     $singleArr["0"] = "zero";
 }
 
+/**
+ * This function prints "word" value of hundreds in price.
+ * @param $number integer it's a value of hundreds.
+ * @param $arr array where function should look for word values.
+ */
 function printHundreds(int $number, array $arr): void
 {
     echo "{$arr[$number]}";
 }
 
-function printTens(int $tens, int $singles, array $arr): void
+/**
+ * This function prints "word" value of tens in price.
+ * @param $number integer it's a value of tens.
+ * @param $singles integer it's value of singles. It's needed for teens :).
+ * @param $arr array where function should look for word values.
+ */
+function printTens(int $number, int $singles, array $arr): void
 {
-    if (1 === $tens) {
+    if (1 === $number) {
         echo "{$arr[1][$singles]}złotych";
     } else {
-        echo "{$arr[$tens]}";
+        echo "{$arr[$number]}";
     }
 }
 
+/**
+ * This function prints "word" value of singles in price.
+ * @param $number integer it's a value of singles.
+ * @param $arr array where function should look for word values.
+ */
 function printSingles(int $number, array $arr): void
 {
     echo "{$arr[$number]}";
