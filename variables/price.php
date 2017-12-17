@@ -88,19 +88,3 @@ printtens($tens, $single, $tensArr);
 if (!($tens === 1)) {
     printSingles($single, $singleArr);
 }
-
-if ($single === 0 || ($single > 4 && $single < 10)) {
-    echo "złotych";
-}
-
-if ($price === 1) {
-    echo "złoty";
-}
-
-if ($single === 1 && $price > 10) {
-    echo "złotych";
-}
-
-if ($single > 1 && $single < 5 && ($price < 10 || $price > 20)) {
-    echo "złote";
-}
