@@ -18,3 +18,6 @@ system('clear');
  *
  * Easier said than code!
  */
+
+$palindromCandidate = "ABCDEFGGHI";
+
