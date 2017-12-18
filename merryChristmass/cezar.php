@@ -9,6 +9,10 @@
 declare(strict_types=1);
 system('clear');
 
+/**
+ * This variable checks if $cipherText is...
+ * @var $isCorrect boolean
+ */
 $isCorrect = false;
 
 /** @var $cipherText string to cipher*/
