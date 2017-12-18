@@ -19,5 +19,6 @@ system('clear');
  * Easier said than code!
  */
 
+/** @var $palindromCandidate string that we will check for palindrom elements. */
 $palindromCandidate = "ABCDEFGGHI";
 
