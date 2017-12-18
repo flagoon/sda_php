@@ -23,9 +23,20 @@ for ($i = 0; $i < strlen($cipherText); $i++) {
      *  If not, character will not be cipher.
      */
     if (preg_match("/[a-zA-Z]/", $cipherText[$i])) {
-        $outputString .= $cipherText[$i];
+        $outputString .= cipherMeGently($cipherText[$i]);
     } else {
         $outputString .= $cipherText[$i];
+    }
+}
+
+function cipherMeGently(string $char): string {
+
+    /** @var $asciiChar integer holding ASCII information about character. */
+    $asciiChar = ord($char);
+    if (($asciiChar > 65 && $asciiChar < 78) || ($asciiChar > 97 && $asciiChar < 110)) {
+        return chr($asciiChar + 13);
+    } else {
+        return chr($asciiChar - 13);
     }
 }
 
