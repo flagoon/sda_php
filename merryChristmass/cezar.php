@@ -29,7 +29,8 @@ for ($i = 0; $i < strlen($cipherText); $i++) {
     }
 }
 
-function cipherMeGently(string $char): string {
+function cipherMeGently(string $char): string
+{
 
     /** @var $asciiChar integer holding ASCII information about character. */
     $asciiChar = ord($char);
