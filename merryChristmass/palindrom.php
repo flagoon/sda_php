@@ -20,5 +20,17 @@ system('clear');
  */
 
 /** @var $palindromCandidate string that we will check for palindrom elements. */
-$palindromCandidate = "ABCDEFGGHI";
+$palindromCandidate = "ABCDEFGGHIZ";
 
+function testPalindrom($stringToTest)
+{
+    $strLength = strlen($stringToTest);
+    echo "__{$stringToTest}__" . PHP_EOL;
+    if ($strLength <= 1) {
+        return $stringToTest;
+    } else {
+        return testPalindrom(substr($stringToTest, 1, $strLength - 2));
+    }
+}
+
+echo testPalindrom($palindromCandidate) . PHP_EOL;
