@@ -8,3 +8,6 @@
 
 declare(strict_types=1);
 system('clear');
+
+/** @var $cipherText string to cipher*/
+$cipherText = readline("Co chcesz zaszyfrować, Brutusie: ");
