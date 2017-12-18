@@ -11,3 +11,9 @@ system('clear');
 
 /** @var $cipherText string to cipher*/
 $cipherText = readline("Co chcesz zaszyfrować, Brutusie: ");
+
+for ($i = 0; $i < mb_strlen($cipherText); $i++) {
+    echo mb_substr($cipherText, $i, 1), PHP_EOL;
+}
+
+echo PHP_EOL;
