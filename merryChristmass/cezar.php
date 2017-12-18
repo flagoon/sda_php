@@ -39,7 +39,7 @@ function cipherMeGently(string $char): string {
         return chr($asciiChar - 13);
     }
 }
-
+echo "*****ZASZYFROWANA WIADOMOŚĆ TO*****" . PHP_EOL;
 echo $outputString;
 
 echo PHP_EOL;
