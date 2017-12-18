@@ -33,7 +33,7 @@ function cipherMeGently(string $char): string {
 
     /** @var $asciiChar integer holding ASCII information about character. */
     $asciiChar = ord($char);
-    if (($asciiChar > 65 && $asciiChar < 78) || ($asciiChar > 97 && $asciiChar < 110)) {
+    if (($asciiChar > 64 && $asciiChar < 78) || ($asciiChar > 96 && $asciiChar < 110)) {
         return chr($asciiChar + 13);
     } else {
         return chr($asciiChar - 13);
