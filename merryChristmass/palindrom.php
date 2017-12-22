@@ -20,7 +20,7 @@ system('clear');
  */
 
 /** @var $palindromCandidate string that we will check for palindrom elements. */
-$palindromCandidate = "ABCDEFGGHIZ";
+$palindromCandidate = "kajaki";
 
 function testPalindrom($stringToTest)
 {
@@ -33,4 +33,23 @@ function testPalindrom($stringToTest)
     }
 }
 
-echo testPalindrom($palindromCandidate) . PHP_EOL;
+
+function secondTry(string $string): bool
+{
+    if (strlen($string) < 3) {
+       return true;
+    }
+    $firstLetter = mb_substr($string, 0,1);
+    $lastLetter = mb_substr($string, strlen($string)-1, 1);
+    if($firstLetter === $lastLetter) {
+        return secondTry(substr($string, 1, strlen($string) - 2));
+    } else {
+        return false;
+    }
+}
+
+if (secondTry($palindromCandidate)) {
+    echo $palindromCandidate . PHP_EOL;
+} else {
+    echo "Not a palindrom.";
+}
