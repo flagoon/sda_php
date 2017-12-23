@@ -20,36 +20,41 @@ system('clear');
  */
 
 /** @var $palindromCandidate string that we will check for palindrom elements. */
-$palindromCandidate = "kajaki";
+$palindromCandidate = "abccbaAAXXSSAXAZZ";
 
-function testPalindrom($stringToTest)
+function palindromTest(string $string): bool
 {
-    $strLength = strlen($stringToTest);
-    echo "__{$stringToTest}__" . PHP_EOL;
-    if ($strLength <= 1) {
-        return $stringToTest;
-    } else {
-        return testPalindrom(substr($stringToTest, 1, $strLength - 2));
+    if (strlen($string) < 2 ) {
+        return true;
     }
-}
-
-
-function secondTry(string $string): bool
-{
-    if (strlen($string) < 3) {
-       return true;
-    }
-    $firstLetter = mb_substr($string, 0,1);
+    $firstLetter = mb_substr($string, 0, 1);
     $lastLetter = mb_substr($string, strlen($string)-1, 1);
-    if($firstLetter === $lastLetter) {
-        return secondTry(substr($string, 1, strlen($string) - 2));
+    if ($firstLetter === $lastLetter) {
+        return palindromTest(substr($string, 1, strlen($string) - 2));
     } else {
         return false;
     }
 }
 
-if (secondTry($palindromCandidate)) {
-    echo $palindromCandidate . PHP_EOL;
-} else {
-    echo "Not a palindrom.";
+//function cutTheShit($string) {
+//    for ($i = strlen($string); $i > 2; $i--) {
+//        for ($j = 0; $j < strlen($string); $j++) {
+//            echo substr($string, $j, $i) . PHP_EOL;
+//        }
+//    }
+//}
+
+function cutTheShit($string){
+    for ($i = 0; $i < strlen($string) - 1; $i++) {
+        $j = 0;
+        do {
+            $paliTest = substr($string, $j, strlen($string) - $i);
+            if (palindromTest($paliTest)) {
+                echo strtoupper($paliTest) . " is a palindrom." . PHP_EOL;
+            }
+        } while ($i != $j++);
+    }
 }
+
+
+cutTheShit($palindromCandidate);
