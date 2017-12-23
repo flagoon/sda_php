@@ -22,6 +22,12 @@ system('clear');
 /** @var $palindromCandidate string that we will check for palindrom elements. */
 $palindromCandidate = "abccbaAAXXSSAXAZZ";
 
+/**
+ * check if the word is a palindrom. It check first and last letter, and if it's the same, then
+ * run it recursively for next letter.
+ *
+ * @param $stringToTest string which will be tested.
+ */
 function palindromTest(string $stringToTest): bool
 {
     if (mb_strlen($stringToTest) < 2) {
@@ -36,11 +42,17 @@ function palindromTest(string $stringToTest): bool
     }
 }
 
+/**
+ * this function will iterate through the letters in word and check if it's a palindrom.
+ *
+ * @param $stringToIterate string that will be tested for all possible palindroms.
+ */
 function iterateThroughWord(string $stringToIterate): void
 {
     for ($i = 0; $i < mb_strlen($stringToIterate) - 1; $i++) {
         $j = 0;
         do {
+            // this variable holds a part of string that is tested by palindromTest function.
             $paliTest = mb_substr($stringToIterate, $j, mb_strlen($stringToIterate) - $i);
             if (palindromTest($paliTest)) {
                 echo mb_strtoupper($paliTest) . " is a palindrom." . PHP_EOL;
