@@ -22,39 +22,32 @@ system('clear');
 /** @var $palindromCandidate string that we will check for palindrom elements. */
 $palindromCandidate = "abccbaAAXXSSAXAZZ";
 
-function palindromTest(string $string): bool
+function palindromTest(string $stringToTest): bool
 {
-    if (strlen($string) < 2 ) {
+    if (mb_strlen($stringToTest) < 2) {
         return true;
     }
-    $firstLetter = mb_substr($string, 0, 1);
-    $lastLetter = mb_substr($string, strlen($string)-1, 1);
+    $firstLetter = mb_substr($stringToTest, 0, 1);
+    $lastLetter = mb_substr($stringToTest, strlen($stringToTest)-1, 1);
     if ($firstLetter === $lastLetter) {
-        return palindromTest(substr($string, 1, strlen($string) - 2));
+        return palindromTest(mb_substr($stringToTest, 1, strlen($stringToTest) - 2));
     } else {
         return false;
     }
 }
 
-//function cutTheShit($string) {
-//    for ($i = strlen($string); $i > 2; $i--) {
-//        for ($j = 0; $j < strlen($string); $j++) {
-//            echo substr($string, $j, $i) . PHP_EOL;
-//        }
-//    }
-//}
-
-function cutTheShit($string){
-    for ($i = 0; $i < strlen($string) - 1; $i++) {
+function iterateThroughWord(string $stringToIterate): void
+{
+    for ($i = 0; $i < mb_strlen($stringToIterate) - 1; $i++) {
         $j = 0;
         do {
-            $paliTest = substr($string, $j, strlen($string) - $i);
+            $paliTest = mb_substr($stringToIterate, $j, mb_strlen($stringToIterate) - $i);
             if (palindromTest($paliTest)) {
-                echo strtoupper($paliTest) . " is a palindrom." . PHP_EOL;
+                echo mb_strtoupper($paliTest) . " is a palindrom." . PHP_EOL;
             }
         } while ($i != $j++);
     }
 }
 
 
-cutTheShit($palindromCandidate);
+iterateThroughWord($palindromCandidate);
