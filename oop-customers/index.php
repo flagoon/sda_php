@@ -29,4 +29,5 @@ $zenek->setName('Zenek');
 echo "\e[32mCustomer: " . $zenek->getName() . PHP_EOL;
 echo "Discount: " . $zenek->getDiscount() . PHP_EOL;
 echo $zenek->askForDiscount() . "\e[0m" . PHP_EOL;
+ChaoticCustomer::getClassName();
 var_export($zenek);

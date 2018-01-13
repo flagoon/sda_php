@@ -24,4 +24,9 @@ class Customer
     {
         echo $this->name . ": Can you tell me my discount, please?" . PHP_EOL;
     }
+
+    public static function getClassName(): void
+    {
+        echo "My name is " . get_called_class() . PHP_EOL;
+    }
 }
