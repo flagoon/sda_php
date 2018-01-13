@@ -34,7 +34,7 @@ var_export($zenek);
 
 echo PHP_EOL . "<+++++++++++++++++++++++>" . PHP_EOL;
 
-$criss = CustomerFactory::chooseCustomer('gentle');
+$criss = CustomerFactory::chooseCustomer(CustomerFactory::CHAOTIC);
 $criss->setName('Criss');
 echo "\e[35mCustomer: " . $criss->getName() . PHP_EOL;
 echo "Discount: " . $criss->getDiscount() . PHP_EOL;

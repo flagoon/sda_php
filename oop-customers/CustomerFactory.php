@@ -5,16 +5,24 @@
  * Date: 13.01.18
  * Time: 14:47
  */
+
+//--rules=@PSR2 --verbose fix $FileDir$/$FileName$
+
 declare(strict_types=1);
 
 class CustomerFactory
 {
+    const GENTLE = 'gentle';
+    const CHAOTIC = 'chaotic';
+
     public static function chooseCustomer(string $customerType): Customer
     {
-        if ($customerType === 'gentle') {
+        if ($customerType === self::GENTLE) {
             return new GentleCustomer();
-        } elseif ($customerType === 'chaotic') {
+        } elseif ($customerType === self::CHAOTIC) {
             return new ChaoticCustomer();
-        } else return new Customer();
+        } else {
+            return new Customer();
+        }
     }
 }
