@@ -17,5 +17,5 @@ $rudolf = new ChaoticCustomer();
 $rudolf->setName('Marian');
 echo "\e[31mCustomer: " . $rudolf->getName() . PHP_EOL;
 echo "Discount: " . $rudolf->getDiscount() . PHP_EOL;
-echo $rudolf->askForDiscount() . PHP_EOL . "\e[0m";
+echo $rudolf->askForDiscount() . "\e[0m";
 var_export($rudolf);
