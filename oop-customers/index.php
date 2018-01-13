@@ -14,7 +14,7 @@ var_export($customer);
 echo PHP_EOL . "<+++++++++++++++++++++++>" . PHP_EOL;
 
 $rudolf = new ChaoticCustomer();
-$rudolf->setName('Marian');
+$rudolf->setName('Stefan');
 echo "\e[31mCustomer: " . $rudolf->getName() . PHP_EOL;
 echo "Discount: " . $rudolf->getDiscount() . PHP_EOL;
 echo $rudolf->askForDiscount() . "\e[0m";
