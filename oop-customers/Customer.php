@@ -20,8 +20,8 @@ class Customer
         return $this->name;
     }
 
-    public function askForDiscount(): void
+    public function askForDiscount(): string
     {
-        echo "Can you tell me my discount, please";
+        return "Can you tell me my discount, please?";
     }
 }
