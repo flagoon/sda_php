@@ -13,4 +13,9 @@ class ChaoticCustomer extends Customer
     {
         return 5;
     }
+
+    public function askForDiscount(): void
+    {
+        echo "Can I ask the manager for a discount?";
+    }
 }
