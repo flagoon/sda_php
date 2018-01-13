@@ -15,6 +15,6 @@ class GentleCustomer extends Customer
 
     public function askForDiscount(): void
     {
-        echo $this->name . ": Hey Criss, what's my discount, bitch?";
+        echo $this->name . ": Hey Criss, what's my discount, bitch?" . PHP_EOL;
     }
 }
