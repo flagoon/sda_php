@@ -14,8 +14,8 @@ class ChaoticCustomer extends Customer
         return 5;
     }
 
-    public function askForDiscount(): string
+    public function askForDiscount(): void
     {
-        return "Can I ask the manager for a discount?";
+        echo $this->name . ": Can I ask the manager for a discount?" . PHP_EOL;
     }
 }

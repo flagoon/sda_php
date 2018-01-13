@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 class Customer
 {
-    private $name;
+    protected $name;
 
     public function getDiscount(): int
     {
@@ -20,8 +20,8 @@ class Customer
         return $this->name;
     }
 
-    public function askForDiscount(): string
+    public function askForDiscount(): void
     {
-        return "Can you tell me my discount, please?";
+        echo $this->name . ": Can you tell me my discount, please?" . PHP_EOL;
     }
 }
