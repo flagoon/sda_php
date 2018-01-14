@@ -22,6 +22,10 @@ class Invoice
         $this->sellDate = $date;
     }
 
+    /**
+     * Function that checks if NIP, name and last name is set and if so, it create $customer variable in Invoice.
+     * @param $customer Customer
+     */
     public function setCustomer(Customer $customer): void
     {
         try {
