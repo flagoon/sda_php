@@ -24,6 +24,13 @@ class Invoice
 
     public function setCustomer(Customer $customer): void
     {
+        try {
+            $customer->getNIP();
+            $customer->getName();
+            $customer->getSurname();
+        } catch (Error $error) {
+            exit ($error);
+        }
         $this->customer = $customer;
     }
 }
