@@ -47,19 +47,46 @@ class Customer
         $this->nip = $nip;
     }
 
+    /**
+     * Function to show name of the customer.
+     * @return string
+     * @throws Error when customer name is not set.
+     */
     public function getName(): string
     {
-        return $this->name;
+        if (!(isset($this->name))) {
+            throw new Error("\e[31mThere is no name for the invoice!\e[0m");
+        } else {
+            return $this->name;
+        }
     }
 
+    /**
+     * Function to show last name of the customer.
+     * @return string
+     * @throws Error when customer last name is not set.
+     */
     public function getSurname(): string
     {
-        return $this->surname;
+        if (!(isset($this->surname))) {
+            throw new Error("\e[31mThere is no lastname for the invoice!\e[0m");
+        } else {
+            return $this->surname;
+        }
     }
-    
+
+    /**
+     * Function to show NIP of the customer.
+     * @return string
+     * @throws Error when customer NIP is not set.
+     */
     public function getNIP(): string
     {
-        return $this->nip;
+        if (!(isset($this->nip))) {
+            throw new Error("\e[31mThere is not NIP!\e[0m");
+        } else {
+            return $this->nip;
+        }
     }
 
     public function askForDiscount(): void
@@ -72,6 +99,11 @@ class Customer
         echo "My name is " . get_called_class() . PHP_EOL;
     }
 
+    /**
+     * Function is creating invoice object.
+     * @param $invoiceId integer. Number of integer.
+     * @return Invoice
+     */
     public function askForInvoice(int $invoiceId): Invoice
     {
         $invoice = new Invoice();
