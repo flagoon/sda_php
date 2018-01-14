@@ -6,7 +6,7 @@
  * Time: 10:48
  */
 
-class GentleCustomer extends Customer
+class GentleCustomer extends Customer implements CustomerInterface
 {
     /**
      * Each gentle customer will get status PREMIUM.
@@ -16,6 +16,11 @@ class GentleCustomer extends Customer
     {
         $this->status = 'premium';
         parent::__construct($age);
+    }
+
+    public static function askForRenew()
+    {
+        // TODO: Implement askForRenew() method.
     }
 
     public function getDiscount(): int

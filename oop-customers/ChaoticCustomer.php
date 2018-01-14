@@ -7,8 +7,12 @@
  */
 declare(strict_types=1);
 
-class ChaoticCustomer extends Customer
+class ChaoticCustomer extends Customer implements CustomerInterface
 {
+    public static function askForRenew()
+    {
+        // TODO: Implement askForRenew() method.
+    }
 
     public function getDiscount(): int
     {
