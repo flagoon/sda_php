@@ -8,6 +8,14 @@
 
 class GentleCustomer extends Customer
 {
+    /**
+     * Each gentle customer will get status PREMIUM.
+     */
+    public function __construct()
+    {
+        $this->status = 'premium';
+    }
+
     public function getDiscount(): int
     {
         return 30;
