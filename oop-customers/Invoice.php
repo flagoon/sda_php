@@ -12,4 +12,18 @@ class Invoice
     protected $sellDate;
     protected $customer;
 
+    public function setInvoiceID(int $id): void
+    {
+        $this->invoiceId = $id;
+    }
+
+    public function setDate(string $date):void
+    {
+        $this->sellDate = $date;
+    }
+
+    public function setCustomer(Customer $customer): void
+    {
+        $this->customer = $customer;
+    }
 }
