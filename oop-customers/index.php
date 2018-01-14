@@ -7,7 +7,7 @@ require_once 'ChaoticCustomer.php';
 require_once 'GentleCustomer.php';
 require_once 'CustomerFactory.php';
 
-$customer = new Customer();
+$customer = new Customer(10);
 $customer->setName('Marian');
 echo "Customer: " . $customer->getName() . PHP_EOL;
 echo "Discount: " . $customer->getDiscount() . PHP_EOL;
