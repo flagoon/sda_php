@@ -6,8 +6,6 @@
  * Time: 14:47
  */
 
-//--rules=@PSR2 --verbose fix $FileDir$/$FileName$
-
 declare(strict_types=1);
 
 class CustomerFactory
