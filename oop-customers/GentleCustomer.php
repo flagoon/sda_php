@@ -10,10 +10,12 @@ class GentleCustomer extends Customer
 {
     /**
      * Each gentle customer will get status PREMIUM.
+     * @param $age int
      */
-    public function __construct()
+    public function __construct(int $age = 0)
     {
         $this->status = 'premium';
+        parent::__construct($age);
     }
 
     public function getDiscount(): int
