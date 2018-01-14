@@ -41,4 +41,5 @@ $criss->setName('Criss');
 echo "\e[35mCustomer: " . $criss->getName() . PHP_EOL;
 echo "Discount: " . $criss->getDiscount() . PHP_EOL;
 echo $criss->askForDiscount() . "\e[0m" . PHP_EOL;
+echo $criss->askForInvoice(1100) .PHP_EOL;
 var_export($criss);

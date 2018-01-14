@@ -48,4 +48,9 @@ class Customer
     {
         echo "My name is " . get_called_class() . PHP_EOL;
     }
+
+    public function askForInvoice(int $invoiceId): string
+    {
+        return "Can I ask for an invoice {$invoiceId}.";
+    }
 }
