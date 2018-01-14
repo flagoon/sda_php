@@ -14,4 +14,7 @@ require_once 'Domain.php';
 
 $hosting = new Hosting();
 $hosting->order();
+$hosting->setPrice(100);
+echo "Price of hosting is: " . $hosting->getPrice() . PHP_EOL;
 var_export($hosting);
+echo PHP_EOL;
