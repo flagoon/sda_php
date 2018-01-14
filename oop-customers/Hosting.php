@@ -13,4 +13,15 @@ class Hosting extends AbstractProduct
     {
         echo "Hosting zamówiony." . PHP_EOL;
     }
+
+    /**
+     * This function change status for product. For domain it can't be done.
+     *
+     * @param $status
+     */
+    public function changeStatus($status)
+    {
+        $this->status = $status;
+        echo "Status for hosting has changed." . PHP_EOL;
+    }
 }

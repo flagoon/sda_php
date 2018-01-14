@@ -10,9 +10,11 @@ system('clear');
 
 abstract class AbstractProduct
 {
+    protected $status;
     protected $price;
 
     abstract public function order();
+    abstract public function changeStatus(string $status);
 
     public function setPrice(int $price): void
     {
