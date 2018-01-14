@@ -6,7 +6,7 @@
  * Time: 12:48
  */
 
-class Domain
+class Domain extends AbstractProduct
 {
 
 }

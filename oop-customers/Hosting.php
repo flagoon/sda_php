@@ -6,7 +6,7 @@
  * Time: 12:47
  */
 
-class Hosting
+class Hosting extends AbstractProduct
 {
 
 }
