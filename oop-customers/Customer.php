@@ -9,7 +9,20 @@ class Customer
      * @var string
      */
     public $status = 'basic';
+
+    /**
+     * Age of the customer
+     *
+     * @var integer
+     */
+    public $age;
+
     protected $name;
+
+    public function __construct(int $age=0)
+    {
+        $this->age = $age;
+    }
 
     public function getDiscount(): int
     {
