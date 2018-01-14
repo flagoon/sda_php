@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+system('clear');
 
 class Customer
 {
@@ -20,7 +21,6 @@ class Customer
     protected $name;
     protected $surname;
     protected $nip;
-    private $customer;
 
     public function __construct(int $age=0)
     {
@@ -47,11 +47,6 @@ class Customer
         $this->nip = $nip;
     }
 
-    public function setCustomer(Customer $customer)
-    {
-        $this->customer = $customer;
-    }
-
     public function getName(): string
     {
         return $this->name;
@@ -61,7 +56,7 @@ class Customer
     {
         return $this->surname;
     }
-
+    
     public function getNIP(): string
     {
         return $this->nip;
@@ -80,8 +75,11 @@ class Customer
     public function askForInvoice(int $invoiceId): Invoice
     {
         $invoice = new Invoice();
-        $invoice->number = $invoiceId;
-        $invoice->date = new DateTime('now');
+        $invoice->setInvoiceID($invoiceId);
+
+        $helpDate = new DateTime;
+        $invoice->setDate($helpDate->format('Y-m-d'));
         $invoice->setCustomer($this);
+        return $invoice;
     }
 }
