@@ -4,6 +4,7 @@ system("clear");
 
 require_once 'CustomerInterface.php';
 require_once 'Customer.php';
+require_once 'Invoice.php';
 require_once 'ChaoticCustomer.php';
 require_once 'GentleCustomer.php';
 require_once 'CustomerFactory.php';
@@ -41,5 +42,7 @@ $criss->setName('Criss');
 echo "\e[35mCustomer: " . $criss->getName() . PHP_EOL;
 echo "Discount: " . $criss->getDiscount() . PHP_EOL;
 echo $criss->askForDiscount() . "\e[0m" . PHP_EOL;
-echo $criss->askForInvoice(1100) .PHP_EOL;
-var_export($criss);
+$criss->setNIP('123-321-23-32');
+$criss->setSurname('Cross');
+$invoice = $criss->askForInvoice(1100);
+var_export($invoice);

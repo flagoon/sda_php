@@ -18,6 +18,9 @@ class Customer
     public $age;
 
     protected $name;
+    protected $surname;
+    protected $nip;
+    private $customer;
 
     public function __construct(int $age=0)
     {
@@ -34,9 +37,34 @@ class Customer
         $this->name = $name;
     }
 
+    public function setSurname(string $surname):void
+    {
+        $this->surname = $surname;
+    }
+
+    public function setNIP(string $nip):void
+    {
+        $this->nip = $nip;
+    }
+
+    public function setCustomer(Customer $customer)
+    {
+        $this->customer = $customer;
+    }
+
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function getSurname(): string
+    {
+        return $this->surname;
+    }
+
+    public function getNIP(): string
+    {
+        return $this->nip;
     }
 
     public function askForDiscount(): void
@@ -49,8 +77,11 @@ class Customer
         echo "My name is " . get_called_class() . PHP_EOL;
     }
 
-    public function askForInvoice(int $invoiceId): string
+    public function askForInvoice(int $invoiceId): Invoice
     {
-        return "Can I ask for an invoice {$invoiceId}.";
+        $invoice = new Invoice();
+        $invoice->number = $invoiceId;
+        $invoice->date = new DateTime('now');
+        $invoice->setCustomer($this);
     }
 }
