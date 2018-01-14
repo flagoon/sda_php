@@ -18,9 +18,9 @@ class GentleCustomer extends Customer implements CustomerInterface
         parent::__construct($age);
     }
 
-    public static function askForRenew()
+    public static function askForRenew(): void
     {
-        // TODO: Implement askForRenew() method.
+        echo "I'm gentle.";
     }
 
     public function getDiscount(): int

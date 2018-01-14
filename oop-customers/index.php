@@ -2,6 +2,7 @@
 declare(strict_types=1);
 system("clear");
 
+require_once 'CustomerInterface.php';
 require_once 'Customer.php';
 require_once 'ChaoticCustomer.php';
 require_once 'GentleCustomer.php';
@@ -30,6 +31,7 @@ $zenek->setName('Zenek');
 echo "\e[32mCustomer: " . $zenek->getName() . PHP_EOL;
 echo "Discount: " . $zenek->getDiscount() . PHP_EOL;
 echo $zenek->askForDiscount() . "\e[0m" . PHP_EOL;
+echo $zenek->askForRenew() . PHP_EOL;
 var_export($zenek);
 
 echo PHP_EOL . "<+++++++++++++++++++++++>" . PHP_EOL;

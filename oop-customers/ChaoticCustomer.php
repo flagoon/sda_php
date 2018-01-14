@@ -9,9 +9,9 @@ declare(strict_types=1);
 
 class ChaoticCustomer extends Customer implements CustomerInterface
 {
-    public static function askForRenew()
+    public static function askForRenew(): void
     {
-        // TODO: Implement askForRenew() method.
+        echo "I'm chaotic.";
     }
 
     public function getDiscount(): int
