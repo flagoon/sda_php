@@ -15,10 +15,8 @@ class CustomerFactory
 
     public static function chooseCustomer(string $customerType, int $year = 0): Customer
     {
-        $age = null;
-        if ($year) {
-            $age = date('Y') - $year;
-        }
+        $age = $year ? date('Y') - $year : 0;
+
         if ($customerType === self::GENTLE) {
             return new GentleCustomer($age);
         } elseif ($customerType === self::CHAOTIC) {
