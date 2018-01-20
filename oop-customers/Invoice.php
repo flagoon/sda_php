@@ -33,7 +33,7 @@ class Invoice
             $customer->getName();
             $customer->getSurname();
         } catch (Error $error) {
-            exit ($error);
+            exit($error);
         }
         $this->customer = $customer;
     }
