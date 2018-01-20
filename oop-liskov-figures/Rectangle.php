@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Time: 12:35
  */
 
-class Rectangle
+class Rectangle implements AreaCalculableInterface
 {
     protected $width;
     protected $height;
@@ -15,7 +15,7 @@ class Rectangle
     /**
      * @return int area of rectangle
      */
-    public function calcAreaOf(): int
+    public function calcArea(): float
     {
         return $this->width * $this->height;
     }
@@ -29,26 +29,10 @@ class Rectangle
     }
 
     /**
-     * @return int
-     */
-    public function getWidth(): int
-    {
-        return $this->width;
-    }
-
-    /**
      * @param int $height
      */
     public function setHeight(int $height): void
     {
         $this->height = $height;
-    }
-
-    /**
-     * @return int
-     */
-    public function getHeight(): int
-    {
-        return $this->height;
     }
 }
