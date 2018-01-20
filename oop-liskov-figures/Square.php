@@ -17,6 +17,14 @@ class Square implements AreaCalculableInterface
         $this->length = $length;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getLength()
+    {
+        return $this->length;
+    }
+
     public function calcArea(): float
     {
         return $this->length * $this->length;
