@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Time: 12:36
  */
 
-class Square extends Rectangle implements AreaCalculableInterface
+class Square implements AreaCalculableInterface
 {
 
     private $length;
