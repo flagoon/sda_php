@@ -20,3 +20,17 @@ $sqr = new Square();
 $sqr->setHeight(5);
 $sqr->setWidth(3);
 echo "Area of square is: {$sqr->calcAreaOf()}" . PHP_EOL;
+
+
+function getArea(Rectangle $rectangle): int
+{
+    $rectangle->setWidth(2);
+    $rectangle->setHeight(3);
+
+    return $rectangle->calcAreaOf();
+}
+
+$newR = new Rectangle();
+$newS = new Square();
+echo getArea($newR) . PHP_EOL;
+echo getArea($newS) . PHP_EOL;
