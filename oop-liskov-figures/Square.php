@@ -7,17 +7,18 @@ declare(strict_types=1);
  * Time: 12:36
  */
 
-class Square extends Rectangle
+class Square extends Rectangle implements AreaCalculableInterface
 {
-    public function setHeight(int $height): void
+
+    private $length;
+
+    public function setLength(int $length): void
     {
-        $this->height = $height;
-        $this->width = $height;
+        $this->length = $length;
     }
 
-    public function setWidth(int $width): void
+    public function calcArea(): float
     {
-        $this->height = $width;
-        $this->width = $width;
+        return $this->length * $this->length;
     }
 }
