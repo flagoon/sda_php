@@ -1,3 +1,6 @@
 .idea/
 .vscode/
 /.php_cs.cache
+
+/vendor/
+/first-composer/vendor/
