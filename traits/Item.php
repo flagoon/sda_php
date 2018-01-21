@@ -6,6 +6,7 @@
  * Time: 10:26
  */
 declare(strict_types=1);
+namespace Flagoon;
 
 class Item
 {

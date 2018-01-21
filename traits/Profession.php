@@ -6,6 +6,7 @@
  * Time: 10:27
  */
 declare(strict_types=1);
+namespace Flagoon;
 
 class Profession
 {

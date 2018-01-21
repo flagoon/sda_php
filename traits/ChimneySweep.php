@@ -5,6 +5,7 @@
  * Date: 21.01.18
  * Time: 10:28
  */
+namespace Flagoon;
 
 require_once "Profession.php";
 require_once "GiveLuckTrait.php";

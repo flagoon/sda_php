@@ -6,6 +6,7 @@
  * Time: 10:30
  */
 declare(strict_types=1);
+namespace Flagoon;
 
 trait GiveLuckTrait
 {

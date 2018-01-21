@@ -13,13 +13,13 @@ require_once "ChimneySweep.php";
 require_once "Coin.php";
 require_once "Baker.php";
 
-$coin = new Coin();
+$coin = new Flagoon\Coin();
 echo $coin->bribe() . PHP_EOL;
 
-$horseShoe = new HorseShoe();
+$horseShoe = new Flagoon\HorseShoe();
 $horseShoe->setLuckAmount(10);
 $horseShoe->setLuckAmount(3);
 echo "Your current horseshoe gives you: " . $horseShoe->getLuckAmount() . "% luck." . PHP_EOL;
 
-$chimneySweeper = new ChimneySweep();
+$chimneySweeper = new Flagoon\ChimneySweep();
 echo $chimneySweeper->sweep() . PHP_EOL;
