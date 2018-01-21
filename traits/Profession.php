@@ -5,6 +5,7 @@
  * Date: 21.01.18
  * Time: 10:27
  */
+declare(strict_types=1);
 
 class Profession
 {
@@ -17,14 +18,6 @@ class Profession
     public function getProfession(): string
     {
         return $this->profession;
-    }
-
-    /**
-     * @param string $profession
-     */
-    public function setProfession(string $profession): void
-    {
-        $this->profession = $profession;
     }
 
     /**

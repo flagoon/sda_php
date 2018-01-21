@@ -6,11 +6,14 @@
  * Time: 10:28
  */
 
+require_once "Profession.php";
+require_once "GiveLuckTrait.php";
+
 class ChimneySweep extends Profession
 {
     use GiveLuckTrait;
 
-    private function sweep()
+    public function sweep()
     {
         return "Chimney is cleaned!";
     }

@@ -11,9 +11,9 @@ trait GiveLuckTrait
 {
     private $luckAmount;
 
-    public function increaseLuckAmount(int $luckAmount): void
+    public function setLuckAmount(int $luckAmount): void
     {
-        $this->luckAmount += $luckAmount;
+        $this->luckAmount = $luckAmount;
     }
 
     /**

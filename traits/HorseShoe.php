@@ -6,6 +6,9 @@
  * Time: 10:26
  */
 
+require_once "Item.php";
+require_once "GiveLuckTrait.php";
+
 class HorseShoe extends Item
 {
     use GiveLuckTrait;
