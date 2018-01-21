@@ -7,11 +7,7 @@
  */
 declare(strict_types=1);
 system("clear");
-
-require_once "HorseShoe.php";
-require_once "ChimneySweep.php";
-require_once "Coin.php";
-require_once "Baker.php";
+require __DIR__ . '/vendor/autoload.php';
 
 $coin = new Flagoon\Coin();
 echo $coin->bribe() . PHP_EOL;
