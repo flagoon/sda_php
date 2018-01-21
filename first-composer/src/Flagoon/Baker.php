@@ -8,10 +8,21 @@
 declare(strict_types=1);
 namespace Flagoon;
 
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+
 class Baker extends Profession
 {
-    private function Bake(): string
+    public function bake(): string
     {
+
+        $log = new Logger('baker');
+        $log->pushHandler(new StreamHandler('loli.log', Logger::WARNING));
+
+        $log->warning('Foo');
+        $log->error('Bar');
         return "Bread";
     }
 }
