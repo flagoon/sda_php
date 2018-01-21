@@ -1,0 +1,16 @@
+{
+    "name": "Flagoon/first-composer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Paweł Kochanek",
+            "email": "flagoon@o2.pl"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Flagoon\\": "src/Flagoon"
+        }
+    }
+}
