@@ -12,6 +12,9 @@ require __DIR__ . '/vendor/autoload.php';
 $coin = new Flagoon\Coin();
 echo $coin->bribe() . PHP_EOL;
 
+$baker = new Flagoon\Baker();
+echo $baker->bake();
+
 $horseShoe = new Flagoon\HorseShoe();
 $horseShoe->setLuckAmount(10);
 $horseShoe->setLuckAmount(3);
