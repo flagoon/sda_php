@@ -8,9 +8,6 @@
 declare(strict_types=1);
 namespace Flagoon;
 
-require_once "Item.php";
-require_once "GiveLuckTrait.php";
-
 class HorseShoe extends Item
 {
     use GiveLuckTrait;

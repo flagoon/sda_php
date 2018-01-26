@@ -7,9 +7,6 @@
  */
 namespace Flagoon;
 
-require_once "Profession.php";
-require_once "GiveLuckTrait.php";
-
 class ChimneySweep extends Profession
 {
     use GiveLuckTrait;
