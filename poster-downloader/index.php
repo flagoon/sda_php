@@ -8,10 +8,11 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-// $config = yaml_parse_file( './config.yml');
-// var_export($config);
+$config = yaml_parse_file( './config/config.yml');
+var_export($config);
 
 $helper = new Flagoon\Helper();
+exit();
 
 $titleArray = [
     'Pirates of the Caribbean: Dead Men Tell No Talse',

@@ -1,5 +1,2 @@
 /vendor/
-/src/posters/*
-/src/shots/*
-/src/posters.txt
-/src/shots.txt
+/logs/
