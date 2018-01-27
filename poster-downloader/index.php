@@ -6,7 +6,7 @@
  * Time: 09:34
  */
 
-require __DIR__ . '';
+require __DIR__ . '/vendor/autoload.php';
 
 $helper = new Helper;
 
