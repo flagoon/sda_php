@@ -6,12 +6,12 @@
  * Time: 09:34
  */
 
-require_once './src/Helper.php';
+require __DIR__ . '/vendor/autoload.php';
 
 // $config = yaml_parse_file( './config.yml');
 // var_export($config);
 
-$helper = new Helper;
+$helper = new Flagoon\Helper();
 
 $titleArray = [
     'Pirates of the Caribbean: Dead Men Tell No Talse',
