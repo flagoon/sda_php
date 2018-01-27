@@ -19,4 +19,9 @@ class Helper
         }
     }
 
+    public function removeSpaces(string $title): string
+    {
+        return strtolower(str_replace(' ', '-', $title));
+    }
+
 }
