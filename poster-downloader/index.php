@@ -6,17 +6,17 @@
  * Time: 09:34
  */
 
-require_once 'src/Helper.php';
+require_once './src/Helper.php';
 
 $helper = new Helper;
 
-$helper->clearImgFolder('img');
+$helper->clearImgFolder('posters');
 
 $urlLocation = 'https://upload.wikimedia.org/wikipedia/en/4/4f/The_Hobbit_-_The_Desolation_of_Smaug_theatrical_poster.jpg';
 
 $poster = file_get_contents($urlLocation);
 $posterName = basename($urlLocation);
-$imgSaveDir = 'src/img';
+$imgSaveDir = './src/posters';
 
 file_put_contents($imgSaveDir . '/'. $posterName, $poster);
 

@@ -11,9 +11,9 @@ class Helper
 {
     public function clearImgFolder(string $folder):void
     {
-        $files = glob('src/' . $folder . '/*');
+        $files = glob('./src/' . $folder . '/*');
         foreach($files as $file) {
-            if(isset($file)) {
+            if(is_file($file)) {
                 unlink($file);
             };
         }

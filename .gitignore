@@ -2,3 +2,4 @@
 .vscode/
 /.php_cs.cache
 /poster-downloader/vendor/
+/poster-downloader/src/posters/*
