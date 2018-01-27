@@ -6,7 +6,7 @@
  * Time: 09:34
  */
 
-require_once './src/Helper.php';
+require __DIR__ . '';
 
 $helper = new Helper;
 
