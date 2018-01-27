@@ -25,26 +25,28 @@ $titleArray = [
     'Spectre'
 ];
 
+$linkList = [];
+
+$urlLocationPosters = 'https://cytaty.eu/img/sda/posters/';
+preg_match_all('/href="([0-9]+)\.jpg"/', file_get_contents($urlLocationPosters),$linkList);
+
 $helper->clearImgFolder('posters');
 $helper->clearImgFolder('shots');
 $imgSaveDir = './src/posters';
 $shotsSaveDir = './src/shots';
 
-$urlLocationPosters = 'https://cytaty.eu/img/sda/posters/';
-$urlLocationShots = 'https://cytaty.eu/img/sda/shots/';
-
-for ($i = 1; $i <= 12; $i++) {
+foreach($linkList[1] as $link) {
     $date = new DateTime();
     file_put_contents(
         './src/posters.txt',
         $date->format('Y-m-d H:i:s.u')
         . ' start downloading poster of '
-        . $titleArray[$i - 1] . '.'
+        . $titleArray[$link - 1] . '.'
         . PHP_EOL,
         FILE_APPEND
     );
-    $poster = file_get_contents($urlLocationPosters . $i . '.jpg');
-    file_put_contents($imgSaveDir . '/'. $helper->removeSpaces($titleArray[$i - 1]) . '.jpg', $poster);
+    $poster = file_get_contents($urlLocationPosters . $link . '.jpg');
+    file_put_contents($imgSaveDir . '/'. $helper->removeSpaces($titleArray[$link - 1]) . '.jpg', $poster);
     $date = new DateTime();
     file_put_contents(
         './src/posters.txt',
@@ -55,17 +57,22 @@ for ($i = 1; $i <= 12; $i++) {
     );
 }
 
-for ($i = 1; $i <= 12; $i++) {
+$shotList = [];
+$urlLocationShots = 'https://cytaty.eu/img/sda/shots/';
+preg_match_all('/href="([0-9]+)\.jpg"/', file_get_contents($urlLocationShots),$shotList);
+
+foreach ($shotList[1] as $shots) {
     $date = new DateTime();
     file_put_contents(
         './src/shots.txt',
         $date->format('Y-m-d H:i:s.u')
         . ' start downloading shot of '
-        . $titleArray[$i - 1] . '.',
+        . $titleArray[$shots - 1] . '.'
+        . PHP_EOL,
         FILE_APPEND
     );
-    $shot = file_get_contents($urlLocationShots . $i . '.jpg');
-    file_put_contents($shotsSaveDir . '/'. $helper->removeSpaces($titleArray[$i - 1]) . '.jpg', $shot);
+    $shot = file_get_contents($urlLocationShots . $shots . '.jpg');
+    file_put_contents($shotsSaveDir . '/'. $helper->removeSpaces($titleArray[$shots - 1]) . '.jpg', $shot);
     $date = new DateTime();
     file_put_contents(
         './src/shots.txt',
