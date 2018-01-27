@@ -34,3 +34,27 @@
 2018-01-27 14:20:52.016627 download stopped.
 2018-01-27 14:20:52.016730 start downloading shot of The Legend of Tarzan.
 2018-01-27 14:20:52.233790 download stopped.
+2018-01-27 14:50:43.078397 start downloading shot of Pirates of the Caribbean: Dead Men Tell No Talse.
+2018-01-27 14:50:43.298177 download stopped.
+2018-01-27 14:50:43.298298 start downloading shot of The Founder.
+2018-01-27 14:50:43.471245 download stopped.
+2018-01-27 14:50:43.471334 start downloading shot of Captain America Civil War.
+2018-01-27 14:50:43.882727 download stopped.
+2018-01-27 14:50:43.882829 start downloading shot of Spectre.
+2018-01-27 14:50:44.100601 download stopped.
+2018-01-27 14:50:44.100696 start downloading shot of Rings.
+2018-01-27 14:50:44.315998 download stopped.
+2018-01-27 14:50:44.316112 start downloading shot of Blade Runner 2049.
+2018-01-27 14:50:44.921719 download stopped.
+2018-01-27 14:50:44.921917 start downloading shot of Thor.
+2018-01-27 14:50:45.243353 download stopped.
+2018-01-27 14:50:45.243464 start downloading shot of Get Out.
+2018-01-27 14:50:45.489754 download stopped.
+2018-01-27 14:50:45.489836 start downloading shot of Star Wars the Last Jedi.
+2018-01-27 14:50:46.324442 download stopped.
+2018-01-27 14:50:46.324556 start downloading shot of Okja.
+2018-01-27 14:50:46.537985 download stopped.
+2018-01-27 14:50:46.538071 start downloading shot of London has Fallen.
+2018-01-27 14:50:46.720331 download stopped.
+2018-01-27 14:50:46.720430 start downloading shot of The Legend of Tarzan.
+2018-01-27 14:50:46.993272 download stopped.

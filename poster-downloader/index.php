@@ -8,6 +8,11 @@
 
 require_once './src/Helper.php';
 
+// $config = yaml_parse_file( './config.yml');
+// var_export($config);
+
+exit();
+
 $helper = new Helper;
 
 $titleArray = [

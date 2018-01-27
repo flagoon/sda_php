@@ -254,3 +254,25 @@
 2018-01-27 14:16:59.512593 download stopped.
 2018-01-27 14:16:59.512679 start downloading poster of The Legend of Tarzan.
 2018-01-27 14:16:59.654683 download stopped.
+2018-01-27 14:50:40.004271 start downloading poster of Pirates of the Caribbean: Dead Men Tell No Talse.
+2018-01-27 14:50:40.211707 download stopped.
+2018-01-27 14:50:40.211799 start downloading poster of The Founder.
+2018-01-27 14:50:40.393792 download stopped.
+2018-01-27 14:50:40.393893 start downloading poster of Captain America Civil War.
+2018-01-27 14:50:40.525664 download stopped.
+2018-01-27 14:50:40.525763 start downloading poster of Spectre.
+2018-01-27 14:50:40.912262 download stopped.
+2018-01-27 14:50:40.912365 start downloading poster of Rings.
+2018-01-27 14:50:41.096052 download stopped.
+2018-01-27 14:50:41.096155 start downloading poster of Blade Runner 2049.
+2018-01-27 14:50:41.702101 download stopped.
+2018-01-27 14:50:41.702198 start downloading poster of Thor.
+2018-01-27 14:50:41.961339 download stopped.
+2018-01-27 14:50:41.961438 start downloading poster of Get Out.
+2018-01-27 14:50:42.191641 download stopped.
+2018-01-27 14:50:42.191751 start downloading poster of Star Wars the Last Jedi.
+2018-01-27 14:50:42.608655 download stopped.
+2018-01-27 14:50:42.608753 start downloading poster of London has Fallen.
+2018-01-27 14:50:42.812884 download stopped.
+2018-01-27 14:50:42.812985 start downloading poster of The Legend of Tarzan.
+2018-01-27 14:50:42.970958 download stopped.
