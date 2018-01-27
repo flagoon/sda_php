@@ -1,0 +1,7 @@
+images:
+  posters: https://cytaty.eu/img/sda/posters/
+  shots: https://cytaty.eu/img/sda/shots/
+
+logFilename:
+  posters: ./src/posters.txt
+  shots: ./src/shots.txt
