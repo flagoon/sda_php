@@ -11,7 +11,7 @@ require_once './src/Helper.php';
 $helper = new Helper;
 
 $titleArray = [
-    'Pirates of the Caribbean Dead Men Tell No Talse',
+    'Pirates of the Caribbean: Dead Men Tell No Talse',
     'Rings',
     'Blade Runner 2049',
     'Thor',
@@ -44,7 +44,7 @@ for ($i = 1; $i <= 12; $i++) {
         FILE_APPEND
     );
     $poster = file_get_contents($urlLocationPosters . $i . '.jpg');
-    file_put_contents($imgSaveDir . '/'. $titleArray[$i - 1] . '.jpg', $poster);
+    file_put_contents($imgSaveDir . '/'. $helper->removeSpaces($titleArray[$i - 1]) . '.jpg', $poster);
     $date = new DateTime();
     file_put_contents(
         './src/posters.txt',
@@ -65,7 +65,7 @@ for ($i = 1; $i <= 12; $i++) {
         FILE_APPEND
     );
     $shot = file_get_contents($urlLocationShots . $i . '.jpg');
-    file_put_contents($shotsSaveDir . '/'. $titleArray[$i - 1] . '.jpg', $shot);
+    file_put_contents($shotsSaveDir . '/'. $helper->removeSpaces($titleArray[$i - 1]) . '.jpg', $shot);
     $date = new DateTime();
     file_put_contents(
         './src/shots.txt',

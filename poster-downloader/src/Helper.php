@@ -21,7 +21,7 @@ class Helper
 
     public function removeSpaces(string $title): string
     {
-        return strtolower(str_replace(' ', '-', $title));
+        return mb_strtolower(preg_replace(['([^\w\s])m', '([\s])m'], ['', '-'], $title));
     }
 
 }
