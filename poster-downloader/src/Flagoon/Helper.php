@@ -15,6 +15,7 @@ class Helper
 {
     /**
      * Function clearing folders from files.
+     *
      * @param string $folder path to folder to delete.
      */
     public function clearFolder(string $folder):void
@@ -28,12 +29,29 @@ class Helper
     }
 
     /**
-     * This function get's a string and remove all spaces/forbidden characters, and change all fonts to lower.
-     * @param string $title
-     * @return string that is sanitize, without spaces and forbiden characters, also with all fonts to lower.
+     * This function gets a string and removes all spaces/forbidden characters, and changes all fonts to lower.
+     *
+     * @param string $title title of the movie to change to URL.
+     *
+     * @return string
      */
-    public function sanitizeTitles(string $title): string
+    public function convertTitleToUrl(string $title): string
     {
         return mb_strtolower(preg_replace(['([^\w\s])m', '([\s])m'], ['', '-'], $title));
+    }
+
+
+    /**
+     * This function extracts file names from HTML. It returns regex groups in second array.
+     *
+     * @param string $html html text we get from website.
+     *
+     * @return array
+     */
+    public function extractFileNamesFromHTML(string $html): array
+    {
+        $regexArray = [];
+        preg_match_all('/href="([0-9]+)\.jpg"/', $html, $regexArray);
+        return $regexArray[1];
     }
 }
