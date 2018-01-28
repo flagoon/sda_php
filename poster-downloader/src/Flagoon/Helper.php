@@ -12,17 +12,16 @@ class Helper
 {
     public function clearImgFolder(string $folder):void
     {
-        $files = glob('./src/' . $folder . '/*');
-        foreach($files as $file) {
-            if(is_file($file)) {
+        $files = glob($folder . "/*");
+        foreach ($files as $file) {
+            if (is_file($file)) {
                 unlink($file);
             };
         }
     }
 
-    public function removeSpaces(string $title): string
+    public function sanitizeTitles(string $title): string
     {
         return mb_strtolower(preg_replace(['([^\w\s])m', '([\s])m'], ['', '-'], $title));
     }
-
 }
