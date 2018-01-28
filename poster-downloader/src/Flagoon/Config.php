@@ -11,7 +11,13 @@ namespace Flagoon;
 class Config
 {
     public const SHOTS_LOG_FILE = "./logs/postersLog.txt";
+    public const SHOTS_SAVE_DIR = "./resources/shots/";
+    public const SHOTS_URL = "https://cytaty.eu/img/sda/shots/";
+
     public const POSTER_LOG_FILE = "./logs/shotsLog.txt";
+    public const POSTERS_SAVE_DIR = "./resources/posters/";
+    public const POSTERS_URL = "https://cytaty.eu/img/sda/posters/";
+
     public const TITLES_ARRAY = [
         "Pirates of the Caribbean: Dead Men Tell No Talse",
         "Rings",
@@ -26,9 +32,4 @@ class Config
         "Captain America Civil War",
         "Spectre"
     ];
-
-    public const POSTERS_SAVE_DIR = "./resources/posters/";
-    public const SHOTS_SAVE_DIR = "./resources/shots/";
-    public const POSTERS_URL = "https://cytaty.eu/img/sda/posters/";
-    public const SHOTS_URL = "https://cytaty.eu/img/sda/shots/";
 }
