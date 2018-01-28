@@ -8,7 +8,6 @@
 declare(strict_types=1);
 namespace Flagoon;
 
-
 class Logger
 {
     // as I have multiple logs I need to give different paths to them.
@@ -22,10 +21,12 @@ class Logger
     public function addToLog(string $loggerContent)
     {
         $date = new \DateTime();
-        file_put_contents($this->logFile,
+        file_put_contents(
+            $this->logFile,
             $date->format('Y-m-d H:i:s.u')
             . ' ' . $loggerContent .
             PHP_EOL,
-            FILE_APPEND);
+            FILE_APPEND
+        );
     }
 }
