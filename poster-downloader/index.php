@@ -13,8 +13,8 @@ $helper = new Helper();
 $posterLog = new Logger(Config::POSTER_LOG_FILE);
 $shotsLog = new Logger(Config::SHOTS_LOG_FILE);
 
-$helper->clearImgFolder(Config::POSTERS_SAVE_DIR);
-$helper->clearImgFolder(Config::SHOTS_SAVE_DIR);
+$helper->clearFolder(Config::POSTERS_SAVE_DIR);
+$helper->clearFolder(Config::SHOTS_SAVE_DIR);
 
 $linkList = [];
 preg_match_all('/href="([0-9]+)\.jpg"/', file_get_contents(Config::POSTERS_URL), $linkList);
