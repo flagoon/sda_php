@@ -8,11 +8,9 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-$config = yaml_parse_file( './config/config.yml');
-var_export($config);
-
 $helper = new Flagoon\Helper();
-exit();
+$posterLog = new Flagoon\Logger('./logs/postersLog.txt');
+$shotsLog = new Flagoon\Logger('./logs/shotsLog.txt');
 
 $titleArray = [
     'Pirates of the Caribbean: Dead Men Tell No Talse',
@@ -29,36 +27,19 @@ $titleArray = [
     'Spectre'
 ];
 
+$posterSaveDir = './resources/posters';
+$shotsSaveDir = './resources/shots';
+
 $linkList = [];
 
 $urlLocationPosters = 'https://cytaty.eu/img/sda/posters/';
 preg_match_all('/href="([0-9]+)\.jpg"/', file_get_contents($urlLocationPosters),$linkList);
 
-$helper->clearImgFolder('posters');
-$helper->clearImgFolder('shots');
-$imgSaveDir = './src/posters';
-$shotsSaveDir = './src/shots';
-
 foreach($linkList[1] as $link) {
-    $date = new DateTime();
-    file_put_contents(
-        './src/posters.txt',
-        $date->format('Y-m-d H:i:s.u')
-        . ' start downloading poster of '
-        . $titleArray[$link - 1] . '.'
-        . PHP_EOL,
-        FILE_APPEND
-    );
+    $posterLog->addToLog("I started downloading {$titleArray[$link - 1]}");
     $poster = file_get_contents($urlLocationPosters . $link . '.jpg');
-    file_put_contents($imgSaveDir . '/'. $helper->removeSpaces($titleArray[$link - 1]) . '.jpg', $poster);
-    $date = new DateTime();
-    file_put_contents(
-        './src/posters.txt',
-        $date->format('Y-m-d H:i:s.u')
-        . ' download stopped.'
-        . PHP_EOL,
-        FILE_APPEND
-    );
+    file_put_contents($posterSaveDir . '/'. $helper->removeSpaces($titleArray[$link - 1]) . '.jpg', $poster);
+    $posterLog->addToLog("I stopped downloading {$titleArray[$link - 1]}");
 }
 
 $shotList = [];
@@ -66,23 +47,8 @@ $urlLocationShots = 'https://cytaty.eu/img/sda/shots/';
 preg_match_all('/href="([0-9]+)\.jpg"/', file_get_contents($urlLocationShots),$shotList);
 
 foreach ($shotList[1] as $shots) {
-    $date = new DateTime();
-    file_put_contents(
-        './src/shots.txt',
-        $date->format('Y-m-d H:i:s.u')
-        . ' start downloading shot of '
-        . $titleArray[$shots - 1] . '.'
-        . PHP_EOL,
-        FILE_APPEND
-    );
+    $shotsLog->addToLog("I started downloading {$titleArray[$shots - 1]}");
     $shot = file_get_contents($urlLocationShots . $shots . '.jpg');
     file_put_contents($shotsSaveDir . '/'. $helper->removeSpaces($titleArray[$shots - 1]) . '.jpg', $shot);
-    $date = new DateTime();
-    file_put_contents(
-        './src/shots.txt',
-        $date->format('Y-m-d H:i:s.u')
-        . ' download stopped.'
-        . PHP_EOL,
-        FILE_APPEND
-    );
+    $shotsLog->addToLog("I started downloading {$titleArray[$shots - 1]}");
 }
