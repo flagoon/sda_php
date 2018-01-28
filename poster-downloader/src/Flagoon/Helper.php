@@ -10,7 +10,11 @@ namespace Flagoon;
 
 class Helper
 {
-    public function clearImgFolder(string $folder):void
+    /**
+     * Function clearing folders from files.
+     * @param string $folder path to folder to delete.
+     */
+    public function clearFolder(string $folder):void
     {
         $files = glob($folder . "/*");
         foreach ($files as $file) {
@@ -20,6 +24,11 @@ class Helper
         }
     }
 
+    /**
+     * This function get's a string and remove all spaces/forbidden characters, and change all fonts to lower.
+     * @param string $title
+     * @return string that is sanitize, without spaces and forbiden characters, also with all fonts to lower.
+     */
     public function sanitizeTitles(string $title): string
     {
         return mb_strtolower(preg_replace(['([^\w\s])m', '([\s])m'], ['', '-'], $title));
