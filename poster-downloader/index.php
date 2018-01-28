@@ -30,8 +30,8 @@ $shotList = [];
 preg_match_all('/href="([0-9]+)\.jpg"/', file_get_contents(Config::SHOTS_URL), $shotList);
 
 foreach ($shotList[1] as $shots) {
-    $shotsLog->addToLog("I started downloading " . Config::TITLES_ARRAY[$link - 1]);
+    $shotsLog->addToLog("I started downloading " . Config::TITLES_ARRAY[$shots - 1]);
     $shot = file_get_contents(Config::SHOTS_URL . $shots . '.jpg');
-    file_put_contents(Config::SHOTS_SAVE_DIR . '/'. $helper->sanitizeTitles(Config::TITLES_ARRAY[$link - 1]) . '.jpg', $shot);
-    $shotsLog->addToLog("I stopped downloading " . Config::TITLES_ARRAY[$link - 1]);
+    file_put_contents(Config::SHOTS_SAVE_DIR . '/'. $helper->sanitizeTitles(Config::TITLES_ARRAY[$shots - 1]) . '.jpg', $shot);
+    $shotsLog->addToLog("I stopped downloading " . Config::TITLES_ARRAY[$shots - 1]);
 }
