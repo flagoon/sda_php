@@ -5,37 +5,36 @@
  * Date: 27.01.18
  * Time: 09:34
  */
-namespace Flagoon;
+
+use Flagoon\Helper;
+use Flagoon\Config;
+use Flagoon\Logger;
+use Flagoon\FileDownloader;
+
 
 require __DIR__ . '/vendor/autoload.php';
 
 $helper = new Helper();
 $posterLog = new Logger(Config::POSTER_LOG_FILE);
 $shotsLog = new Logger(Config::SHOTS_LOG_FILE);
+$posterDownloader = new FileDownloader('poster');
+$shotDownloader = new FileDownloader('shot');
 
 $helper->clearFolder(Config::POSTERS_SAVE_DIR);
 $helper->clearFolder(Config::SHOTS_SAVE_DIR);
 
-$linkList = [];
-preg_match_all('/href="([0-9]+)\.jpg"/', file_get_contents(Config::POSTERS_URL), $linkList);
+$postersList = $helper->extractFileNamesFromHTML(file_get_contents(Config::POSTERS_URL));
 
-foreach ($linkList[1] as $link) {
-    $posterLog->addToLog("I started downloading " . Config::TITLES_ARRAY[$link - 1]);
-    $poster = file_get_contents(Config::POSTERS_URL . $link . '.jpg');
-    file_put_contents(Config::POSTERS_SAVE_DIR . '/'
-        . $helper->sanitizeTitles(Config::TITLES_ARRAY[$link - 1])
-        . '.jpg', $poster);
-    $posterLog->addToLog("I stopped downloading " . Config::TITLES_ARRAY[$link - 1]);
+foreach ($postersList as $posterLink) {
+    $posterLog->addToLog("I started downloading " . Config::TITLES_ARRAY[$posterLink - 1]);
+    $posterDownloader->downloadJpg($posterLink);
+    $posterLog->addToLog("I stopped downloading " . Config::TITLES_ARRAY[$posterLink - 1]);
 }
 
-$shotList = [];
-preg_match_all('/href="([0-9]+)\.jpg"/', file_get_contents(Config::SHOTS_URL), $shotList);
+$shotList = $helper->extractFileNamesFromHTML(file_get_contents(Config::SHOTS_URL));
 
-foreach ($shotList[1] as $shots) {
-    $shotsLog->addToLog("I started downloading " . Config::TITLES_ARRAY[$shots - 1]);
-    $shot = file_get_contents(Config::SHOTS_URL . $shots . '.jpg');
-    file_put_contents(Config::SHOTS_SAVE_DIR . '/'
-        . $helper->sanitizeTitles(Config::TITLES_ARRAY[$shots - 1])
-        . '.jpg', $shot);
-    $shotsLog->addToLog("I stopped downloading " . Config::TITLES_ARRAY[$shots - 1]);
+foreach ($shotList as $shotLink) {
+    $shotsLog->addToLog("I started downloading " . Config::TITLES_ARRAY[$shotLink - 1]);
+    $shotDownloader->downloadJpg($shotLink);
+    $shotsLog->addToLog("I stopped downloading " . Config::TITLES_ARRAY[$shotLink - 1]);
 }
