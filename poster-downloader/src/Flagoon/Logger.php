@@ -10,14 +10,22 @@ namespace Flagoon;
 
 class Logger
 {
-    // as I have multiple logs I need to give different paths to them.
+    // $logFile string path to file that holds logs.
     private $logFile;
 
+    /**
+     * Assign a path to $logFile to show where to keep logs.
+     * @param string $logFile
+     */
     public function __construct(string $logFile)
     {
         $this->logFile = $logFile;
     }
 
+    /**
+     * This function adds to log file new log.
+     * @param string $loggerContent
+     */
     public function addToLog(string $loggerContent)
     {
         $date = new \DateTime();
