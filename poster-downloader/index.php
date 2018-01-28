@@ -11,7 +11,6 @@ use Flagoon\Config;
 use Flagoon\Logger;
 use Flagoon\FileDownloader;
 
-
 require __DIR__ . '/vendor/autoload.php';
 
 $helper = new Helper();
@@ -25,16 +24,20 @@ $helper->clearFolder(Config::SHOTS_SAVE_DIR);
 
 $postersList = $helper->extractFileNamesFromHTML(file_get_contents(Config::POSTERS_URL));
 
-foreach ($postersList as $posterLink) {
-    $posterLog->addToLog("I started downloading " . Config::TITLES_ARRAY[$posterLink - 1]);
-    $posterDownloader->downloadJpg($posterLink);
-    $posterLog->addToLog("I stopped downloading " . Config::TITLES_ARRAY[$posterLink - 1]);
+foreach ($postersList as $posterNumber) {
+    $posterLog->addToLog("I started downloading "
+        . Config::TITLES_ARRAY[$posterNumber - 1]);
+    $posterDownloader->downloadJpg($posterNumber);
+    $posterLog->addToLog("I stopped downloading "
+        . Config::TITLES_ARRAY[$posterNumber - 1]);
 }
 
 $shotList = $helper->extractFileNamesFromHTML(file_get_contents(Config::SHOTS_URL));
 
-foreach ($shotList as $shotLink) {
-    $shotsLog->addToLog("I started downloading " . Config::TITLES_ARRAY[$shotLink - 1]);
-    $shotDownloader->downloadJpg($shotLink);
-    $shotsLog->addToLog("I stopped downloading " . Config::TITLES_ARRAY[$shotLink - 1]);
+foreach ($shotList as $shotNumber) {
+    $shotsLog->addToLog("I started downloading "
+        . Config::TITLES_ARRAY[$shotNumber - 1]);
+    $shotDownloader->downloadJpg($shotNumber);
+    $shotsLog->addToLog("I stopped downloading "
+        . Config::TITLES_ARRAY[$shotNumber - 1]);
 }
