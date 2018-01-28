@@ -16,8 +16,8 @@ require __DIR__ . '/vendor/autoload.php';
 $helper = new Helper();
 $posterLog = new Logger(Config::POSTER_LOG_FILE);
 $shotsLog = new Logger(Config::SHOTS_LOG_FILE);
-$posterDownloader = new FileDownloader('poster');
-$shotDownloader = new FileDownloader('shot');
+$posterDownloader = new FileDownloader('poster', $helper);
+$shotDownloader = new FileDownloader('shot', $helper);
 
 $helper->clearFolder(Config::POSTERS_SAVE_DIR);
 $helper->clearFolder(Config::SHOTS_SAVE_DIR);

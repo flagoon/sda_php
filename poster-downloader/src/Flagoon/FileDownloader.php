@@ -21,10 +21,12 @@ class FileDownloader
      * @var string $imgType
      */
     private $imgType;
+    private $helper;
 
-    public function __construct(string $imgType)
+    public function __construct(string $imgType, Helper $helper)
     {
         $this->imgType = $imgType;
+        $this->helper = $helper;
     }
 
     /**
@@ -34,8 +36,6 @@ class FileDownloader
      */
     public function downloadJpg(int $fileNumber): void
     {
-        $helper = new Helper();
-
         if ($this->imgType === 'poster') {
             $url = Config::POSTERS_URL;
             $dir = Config::POSTERS_SAVE_DIR;
@@ -46,7 +46,7 @@ class FileDownloader
 
         $file = file_get_contents($url . $fileNumber . '.jpg');
         file_put_contents($dir
-            . $helper->convertTitleToUrl(Config::TITLES_ARRAY[$fileNumber - 1])
+            . $this->helper->convertTitleToUrl(Config::TITLES_ARRAY[$fileNumber - 1])
             . '.jpg', $file);
     }
 }
