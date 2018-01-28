@@ -5,50 +5,33 @@
  * Date: 27.01.18
  * Time: 09:34
  */
+namespace Flagoon;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$helper = new Flagoon\Helper();
-$posterLog = new Flagoon\Logger('./logs/postersLog.txt');
-$shotsLog = new Flagoon\Logger('./logs/shotsLog.txt');
+$helper = new Helper();
+$posterLog = new Logger(Config::POSTER_LOG_FILE);
+$shotsLog = new Logger(Config::SHOTS_LOG_FILE);
 
-$titleArray = [
-    'Pirates of the Caribbean: Dead Men Tell No Talse',
-    'Rings',
-    'Blade Runner 2049',
-    'Thor',
-    'Get Out',
-    'Star Wars the Last Jedi',
-    'Okja',
-    'London has Fallen',
-    'The Legend of Tarzan',
-    'The Founder',
-    'Captain America Civil War',
-    'Spectre'
-];
-
-$posterSaveDir = './resources/posters';
-$shotsSaveDir = './resources/shots';
+$helper->clearImgFolder(Config::POSTERS_SAVE_DIR);
+$helper->clearImgFolder(Config::SHOTS_SAVE_DIR);
 
 $linkList = [];
+preg_match_all('/href="([0-9]+)\.jpg"/', file_get_contents(Config::POSTERS_URL), $linkList);
 
-$urlLocationPosters = 'https://cytaty.eu/img/sda/posters/';
-preg_match_all('/href="([0-9]+)\.jpg"/', file_get_contents($urlLocationPosters),$linkList);
-
-foreach($linkList[1] as $link) {
-    $posterLog->addToLog("I started downloading {$titleArray[$link - 1]}");
-    $poster = file_get_contents($urlLocationPosters . $link . '.jpg');
-    file_put_contents($posterSaveDir . '/'. $helper->removeSpaces($titleArray[$link - 1]) . '.jpg', $poster);
-    $posterLog->addToLog("I stopped downloading {$titleArray[$link - 1]}");
+foreach ($linkList[1] as $link) {
+    $posterLog->addToLog("I started downloading " . Config::TITLES_ARRAY[$link - 1]);
+    $poster = file_get_contents(Config::POSTERS_URL . $link . '.jpg');
+    file_put_contents(Config::POSTERS_SAVE_DIR . '/'. $helper->sanitizeTitles(Config::TITLES_ARRAY[$link - 1]) . '.jpg', $poster);
+    $posterLog->addToLog("I stopped downloading " . Config::TITLES_ARRAY[$link - 1]);
 }
 
 $shotList = [];
-$urlLocationShots = 'https://cytaty.eu/img/sda/shots/';
-preg_match_all('/href="([0-9]+)\.jpg"/', file_get_contents($urlLocationShots),$shotList);
+preg_match_all('/href="([0-9]+)\.jpg"/', file_get_contents(Config::SHOTS_URL), $shotList);
 
 foreach ($shotList[1] as $shots) {
-    $shotsLog->addToLog("I started downloading {$titleArray[$shots - 1]}");
-    $shot = file_get_contents($urlLocationShots . $shots . '.jpg');
-    file_put_contents($shotsSaveDir . '/'. $helper->removeSpaces($titleArray[$shots - 1]) . '.jpg', $shot);
-    $shotsLog->addToLog("I started downloading {$titleArray[$shots - 1]}");
+    $shotsLog->addToLog("I started downloading " . Config::TITLES_ARRAY[$link - 1]);
+    $shot = file_get_contents(Config::SHOTS_URL . $shots . '.jpg');
+    file_put_contents(Config::SHOTS_SAVE_DIR . '/'. $helper->sanitizeTitles(Config::TITLES_ARRAY[$link - 1]) . '.jpg', $shot);
+    $shotsLog->addToLog("I stopped downloading " . Config::TITLES_ARRAY[$link - 1]);
 }
