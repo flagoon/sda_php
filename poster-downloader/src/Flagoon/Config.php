@@ -8,6 +8,10 @@
 
 namespace Flagoon;
 
+/**
+ * This class holds CONSTANTS for using it in the project. Normal
+ * usage Config::NAME_OF_CONST.
+ */
 class Config
 {
     public const SHOTS_LOG_FILE = "./logs/postersLog.txt";

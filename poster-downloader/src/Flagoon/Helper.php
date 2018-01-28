@@ -8,6 +8,9 @@
 declare(strict_types=1);
 namespace Flagoon;
 
+/**
+ * This class holds various methods to use in the projects.
+ */
 class Helper
 {
     /**

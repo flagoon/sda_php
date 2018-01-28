@@ -8,6 +8,10 @@
 declare(strict_types=1);
 namespace Flagoon;
 
+/**
+ * This class is responsible for login important actions in log files.
+ * In constructor it set path to file that should hold then logs.
+ */
 class Logger
 {
     // $logFile string path to file that holds logs.
