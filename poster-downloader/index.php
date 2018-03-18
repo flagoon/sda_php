@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: flagoon
@@ -41,3 +42,5 @@ foreach ($shotList as $shotNumber) {
     $shotsLog->addToLog("I stopped downloading "
         . Config::TITLES_ARRAY[$shotNumber - 1]);
 }
+
+echo "Done!";
