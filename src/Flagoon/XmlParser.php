@@ -10,8 +10,12 @@ namespace Flagoon;
 class XmlParser implements ParsableInterface
 {
 
-    public function parse(array $array):string
+    public function parse(array $values):string
     {
-        // TODO: Implement parse() method.
+        $xml = '';
+        foreach ($values as $key => $value) {
+            $xml .= "<{$key}>$value</$key>" . PHP_EOL;
+        }
+        return $xml;
     }
 }

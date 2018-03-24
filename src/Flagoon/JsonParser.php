@@ -12,6 +12,6 @@ class JsonParser implements ParsableInterface
 
     public function parse(array $array):string
     {
-        return "im in";
+        return json_encode($array);
     }
 }

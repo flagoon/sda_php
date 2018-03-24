@@ -10,8 +10,12 @@ namespace Flagoon;
 class PlainParser implements ParsableInterface
 {
 
-    public function parse(array $array):string
+    public function parse(array $values):string
     {
-        // TODO: Implement parse() method.
+        $plainText = '';
+        foreach ($values as $key => $value) {
+            $plainText .= $key . ": " . $value . ", ";
+        }
+        return $plainText;
     }
 }

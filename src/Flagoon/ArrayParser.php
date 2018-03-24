@@ -15,11 +15,10 @@ class ArrayParser implements ParsableInterface
     public function __construct(ParsableInterface $parser)
     {
         $this->parseType = $parser;
-        echo PHP_EOL . "constructed" . PHP_EOL;
     }
 
     public function parse(array $array):string
     {
-        $this->parseType->parse($array);
+        return $this->parseType->parse($array);
     }
 }
